@@ -14,7 +14,7 @@ setup(
                                                'main_widget.scss'],
                   'qt_sass_theme_getter.var': ['variables.scss']
                   },
-    description='Qt sass theme files',
+    description='Qt sass theme getter',
     url='https://github.com/yjg30737/qt-sass-theme-getter.git',
     install_requires=[
         'qtsass'
