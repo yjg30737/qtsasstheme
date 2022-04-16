@@ -1,0 +1,345 @@
+@import "dark_gray_theme/variables";
+
+QMainWindow {
+    background-color: $bgcolor;
+}
+
+QDialog {
+    background-color: $bgcolor;
+}
+
+.QLabel {
+    color: $textcolor;
+}
+
+.QCheckBox {
+    color: $textcolor;
+}
+
+.QCheckBox:disabled {
+    color: $disabledcolor;
+}
+
+QLineEdit {
+    background: $widgetcolor;
+    color: $textcolor;
+    border: none;
+}
+
+QTableView {
+    background-color: $widgetcolor;
+    outline: 0;
+    border: none;
+}
+
+QTableView::item {
+    background-color: $widgetcolor;
+    color: $textcolor;
+    border: 1px solid #6c6c6c;
+}
+
+QTableView::item:hover {
+    background-color: $hovercolor;
+}
+
+QTableView::item:selected {
+    background-color: $selectcolor;
+}
+
+QHeaderView {
+    background: transparent;
+}
+
+QTableCornerButton::section {
+    background: $widgetcolor;
+}
+
+QHeaderView::section {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #616161, stop: 0.5 #505050, stop: 0.6 #434343, stop:1 #656565);
+    color: $textcolor;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
+
+QListView {
+    background-color: $widgetcolor;
+    outline: 0;
+    border: none;
+}
+
+QListView::item {
+    background-color: $widgetcolor;
+    color: $textcolor;
+    outline: 0;
+}
+
+QListView::item:hover {
+    background-color: $hovercolor;
+    outline: 0;
+}
+
+QListView::item:selected {
+    background-color: $selectcolor;
+}
+
+QTreeView {
+    background-color: $widgetcolor;
+    border: none;
+}
+
+QTreeView::item {
+    background-color: $widgetcolor;
+    color: $textcolor;
+}
+
+QTreeView::item:hover {
+    background-color: $hovercolor;
+}
+
+QTreeView::item:selected {
+    background-color: $selectcolor;
+}
+
+QScrollBar:horizontal {
+    background: $selectcolor;
+}
+
+QScrollBar::handle:horizontal {
+    background: $widgetcolor;
+}
+
+QScrollBar::add-line:horizontal {
+    background: none;
+}
+
+QScrollBar::sub-line:horizontal {
+    background: none;
+}
+
+QScrollBar:left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+    background: none;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+QScrollBar:vertical {
+    border: 1px solid $bordercolor;
+    background: $selectcolor;
+    width: 15px;
+    margin: 22px 0 22px 0;
+}
+
+QScrollBar::handle:vertical {
+    background: $widgetcolor;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical {
+    border: 1px solid $bordercolor;
+    background: $selectcolor;
+    height: 20px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    border: 1px solid $bordercolor;
+    background: $selectcolor;
+    height: 20px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    width: 2px;
+    height: 3px;
+    background: $widgetcolor;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+
+QToolBar {
+    background: $widgetcolor;
+    border-top: 1px solid $bgcolor;
+}
+
+QToolBar::handle {
+    background: $bgcolor;
+    width: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+QToolBar::separator {
+    background: $bgcolor;
+    width: 1px;
+    margin: 2px;
+}
+
+QComboBox {
+    background: transparent;
+    selection-background-color: transparent;
+    selection-color: $selectcolor;
+    color: $textcolor;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid $bordercolor;
+    background: $widgetcolor;
+    selection-background-color: $bgcolor;
+}
+
+QSplitter::handle:vertical {
+    background: transparent;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+QSplitter::handle:horizontal {
+    background: transparent;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+QTextEdit {
+    background: $textwidgetcolor;
+    color: $textcolor;
+    border: none;
+}
+
+QGraphicsView {
+    background-color: $widgetcolor;
+}
+
+QTabBar::tab {
+    color: #b1b1b1;
+    border: 1px solid $bordercolor;
+    border-bottom-style: none;
+    background-color: $widgetcolor;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    margin-right: -1px;
+}
+
+QTabWidget::pane {
+    border: 1px solid $widgetcolor;
+    top: 1px;
+}
+
+QTabBar::tab:last {
+    margin-right: 0;
+    border-top-right-radius: 3px;
+}
+
+QTabBar::tab:selected {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-bottom: 0px;
+}
+
+QTabBar::tab:first:!selected {
+    margin-left: 0px;
+    border-top-left-radius: 3px;
+}
+
+QTabBar::tab:!selected {
+    color: #b1b1b1;
+    border-bottom-style: solid;
+    margin-top: 3px;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:.4 #343434);
+}
+
+QTabBar::tab:!selected:hover {
+    border-top: 2px solid #ffaa00;
+    padding-bottom: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:0.4 #343434, stop:0.2 #343434, stop:0.1 #ffaa00);
+}
+
+QMenu {
+    background-color: $widgetcolor;
+    border: 1px solid $bordercolor;
+}
+
+QMenu::item {
+    background-color: $widgetcolor;
+    color: $textcolor;
+}
+
+QMenu::item:selected {
+    background-color: $selectcolor;
+}
+
+QMenu::item:disabled {
+    color: $disabledcolor;
+}
+
+QMenu::separator {
+    background-color: $bgcolor;
+    height: 1px;
+}
+
+QGroupBox {
+    border: 2px solid $bordercolor;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 7px;
+}
+
+QGroupBox::title {
+    color: $textcolor;
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0 3px;
+}
+
+QSpinBox {
+    color: $textcolor;
+    border: 2px solid $bordercolor;
+    border-radius: 5;
+    padding: 2;
+    background: transparent;
+    font-size: 14px;
+}
+
+QTimeEdit {
+    background-color: $widgetcolor;
+    color: $textcolor;
+}
+
+QStatusBar::item {
+    border: none;
+}
+
+QStatusBar QLabel {
+    margin-right: 2;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #999999;
+    height: 3px;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+    border: 1px solid #5c5c5c;
+    width: 6px;
+    margin: -6px 0;
+    border-radius: 3px;
+}
+
+QToolTip {
+    border: 1px solid $bordercolor;
+    background-color: $widgetcolor;
+    color: $textcolor;
+}

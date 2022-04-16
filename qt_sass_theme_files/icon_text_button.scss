@@ -1,0 +1,59 @@
+@import "dark_gray_variables";
+
+QPushButton
+{
+	border-width:1px;
+	border-radius: 10px;
+	min-width: 5em;
+	min-height: 1em;
+	padding: 6px;
+	background-color: $widgetcolor;
+	color: $textcolor;
+}
+QPushButton:hover
+{
+background-color:$hovercolor;
+border-radius: 10px;
+}
+QPushButton:pressed
+{
+background-color:$selectcolor;
+border-radius: 10px;
+}
+QPushButton:checked
+{
+border: none;
+}
+QPushButton:disabled
+{
+color: $disabledcolor;
+}
+
+QToolButton
+{
+	border-width:1px;
+	border-radius: 10px;
+	min-width: 5em;
+	min-height: 1em;
+	padding: 6px;
+	background-color:#666666;
+	color: #DDDDDD;
+}
+QToolButton:hover
+{
+background-color:#888888;
+border-radius: 10px;
+}
+QToolButton:pressed
+{
+background-color:#222222;
+border-radius: 10px;
+}
+QToolButton:checked
+{
+border: none;
+}
+QToolButton:disabled
+{
+color: #AAAAAA;
+}

@@ -1,0 +1,33 @@
+@import "dark_gray_variables";
+
+QMenuBar 
+{ 
+    background-color: $widgetcolor; 
+    color: $textcolor; 
+}
+
+QMenuBar::item:selected { /* when selected using mouse or keyboard */
+    background: $hovercolor;
+}
+
+QMenuBar::item:pressed {
+    background: $selectcolor;
+}
+
+QMenuBar::item:disabled {
+	color: $disabledcolor;
+}
+
+QToolButton {
+    background-color: transparent;
+    border: none;
+    color: $disabledcolor;
+}
+
+QToolButton::hover {
+    background-color: $hovercolor;
+}
+
+QToolButton::pressed {
+    background-color: $selectcolor;
+}

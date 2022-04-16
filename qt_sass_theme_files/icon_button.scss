@@ -1,0 +1,45 @@
+@import "dark_gray_variables";
+
+QPushButton
+{
+border:0; 
+background:transparent;
+padding:2px;
+}
+QPushButton:hover
+{
+background-color:$hovercolor;
+border-radius: 2px;
+}
+QPushButton:pressed
+{
+background-color:$selectcolor;
+border-radius: 2px;
+}
+QPushButton:checked
+{
+background-color: $selectcolor;
+border: none;
+}
+
+QToolButton
+{
+border:0; 
+background:transparent;
+padding:2px;
+}
+QToolButton:hover
+{
+background-color:$hovercolor;
+border-radius: 2px;
+}
+QToolButton:pressed
+{
+background-color:$selectcolor;
+border-radius: 2px;
+}
+QToolButton:checked
+{
+background-color: $selectcolor;
+border: none;
+}
