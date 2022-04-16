@@ -11,8 +11,7 @@ setup(
                                                'icon_button.scss',
                                                'icon_text_button.scss',
                                                'menu_bar.scss',
-                                               'main_widget.scss',
-                                               'variables.scss'],
+                                               'main_widget.scss'],
                   'qt_sass_theme_getter.var': ['variables.scss']
                   },
     description='Qt sass theme files',
