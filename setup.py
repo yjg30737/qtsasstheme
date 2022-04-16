@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='qt-sass-theme-files',
+    name='qt-sass-theme-getter',
     version='0.0.1',
     author='Jung Gyu Yoon',
     author_email='yjg30737@gmail.com',
@@ -16,7 +16,7 @@ setup(
                   'qt_sass_theme_getter.var': ['variables.scss']
                   },
     description='Qt sass theme files',
-    url='https://github.com/yjg30737/qt-sass-theme-files.git',
+    url='https://github.com/yjg30737/qt-sass-theme-getter.git',
     install_requires=[
         'qtsass'
     ]
