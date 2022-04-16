@@ -12,7 +12,9 @@ setup(
                                           'icon_text_button.scss',
                                           'menu_bar.scss',
                                           'main_widget.scss',
-                                          'variables.scss']},
+                                          'variables.scss'],
+                  'qt_sass_theme_files.var': ['variables.scss']
+                  },
     description='Qt sass theme files',
     url='https://github.com/yjg30737/qt-sass-theme-files.git',
     install_requires=[
