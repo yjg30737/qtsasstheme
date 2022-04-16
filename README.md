@@ -1,2 +1,2 @@
-# qt-sass-theme-files
-Qt sass theme files
+# qt-sass-theme-getter
+Qt sass theme getter
