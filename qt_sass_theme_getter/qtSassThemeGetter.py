@@ -37,23 +37,23 @@ class QtSassThemeGetter:
         sass_dirname = os.path.join(cur_dir, 'sass')
         qtsass.compile_dirname(sass_dirname, output_dir)
 
-    def getThemeStyle(self, output_dir = os.getcwd()):
+    def getThemeStyle(self):
         css = self.__getStyle('theme.scss')
         return css
 
-    def getIconButtonStyle(self, output_dir=os.getcwd()):
+    def getIconButtonStyle(self):
         css = self.__getStyle('icon_button.scss')
         return css
 
-    def getIconTextButtonStyle(self, output_dir=os.getcwd()):
+    def getIconTextButtonStyle(self):
         css = self.__getStyle('icon_text_button.scss')
         return css
 
-    def getMenuBarStyle(self, output_dir=os.getcwd()):
+    def getMenuBarStyle(self):
         css = self.__getStyle('menu_bar.scss')
         return css
 
-    def getMainWidgetStyle(self, output_dir=os.getcwd()):
+    def getMainWidgetStyle(self):
         css = self.__getStyle('main_widget')
         return css
 
