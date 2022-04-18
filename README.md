@@ -16,4 +16,5 @@ Qt sass theme getter. Default theme is <a href="https://github.com/yjg30737/pyqt
 * `getIconTextButtonStyle()`
 * `getMenuBarStyle()`
 * `getMainWidgetStyle()`
+
 I firmly believe that is self-explanatory.
