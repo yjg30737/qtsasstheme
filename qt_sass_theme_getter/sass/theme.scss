@@ -8,15 +8,15 @@ QDialog {
     background-color: $bgcolor;
 }
 
-.QLabel {
+QLabel {
     color: $textcolor;
 }
 
-.QCheckBox {
+QCheckBox {
     color: $textcolor;
 }
 
-.QCheckBox:disabled {
+QCheckBox:disabled {
     color: $disabledcolor;
 }
 
