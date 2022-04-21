@@ -54,6 +54,6 @@ class QtSassThemeGetter:
         return css
 
     def getMainWidgetStyle(self):
-        css = self.__getStyle('main_widget')
+        css = self.__getStyle('main_widget.scss')
         return css
 
