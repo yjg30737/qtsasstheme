@@ -2,7 +2,7 @@
 Qt sass theme getter. Default theme is <a href="https://github.com/yjg30737/pyqt-dark-gray-theme.git">pyqt-dark-gray-theme</a>, my favorite.
 
 ## Install
-`pip3 install git+https://github.com/yjg30737/qt-sass-theme-getter.git --upgrade`
+`python -m pip install qt-sass-theme-getter`
 
 ## Included Packages
 * <a href="https://github.com/spyder-ide/qtsass">qtsass</a> - For convert sass into css
