@@ -29,4 +29,5 @@ Default theme is dark-gray theme, my favorite.
 
 ## Example
 <a href="https://github.com/yjg30737/pyqt-dark-gray-theme/blob/main/pyqt_dark_gray_theme/darkGrayTheme.py">pyqt-dark-gray-theme</a> - return the sass styles after modification
+
 <a href="https://github.com/yjg30737/pyqt-style-setter/blob/main/pyqt_style_setter/styleSetter.py">pyqt-style-setter</a> - set the style of some widgets
