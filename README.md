@@ -10,7 +10,7 @@ Default theme is dark-gray theme, my favorite.
 * <a href="https://github.com/spyder-ide/qtsass">qtsass</a> - For convert sass into css
 
 ## Method Overview
-* `setThemeColor(bg_color, widget_color, text_color, hover_color, border_color, select_color, disabled_color, text_widget_color)` - you can set the theme color by yourself. <b>Give 6-digit hex color string such as #FF0000.</b>
+* `setThemeColor(bg_color, widget_color, text_color, hover_color, border_color, select_color, disabled_color, text_widget_color, scroll_handle_color)` - you can set the theme color by yourself. <b>Give 6-digit hex color string such as #FF0000.</b>
   * bg_color - background color
   * widget_color - widget color
   * text_color - text color
@@ -19,6 +19,7 @@ Default theme is dark-gray theme, my favorite.
   * select_color - selected widgets' color
   * disabled_color - disabled widgets' color
   * text_widget_color - background color of text widget such as `QTextEdit/QTextBrowser`
+  * scroll_handle_color - horizontal/vertical `QScrollBar`'s handle color
 * `getThemeFiles(output_dir = os.getcwd())` - you can save css files in `output_dir` which were converted from .scss files included in this package.
 * `getThemeStyle() -> str` - use it to `QMainWindow`, `QDialog`.
 * `getIconButtonStyle() -> str` - use it to `QPushButton/QToolButton` which has icon.
