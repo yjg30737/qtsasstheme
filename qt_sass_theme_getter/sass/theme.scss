@@ -101,11 +101,11 @@ QTreeView::item:selected {
 }
 
 QScrollBar:horizontal {
-    background: $selectcolor;
+    background: transparent;
 }
 
 QScrollBar::handle:horizontal {
-    background: $widgetcolor;
+    background: $scrollhandlecolor;
 }
 
 QScrollBar::add-line:horizontal {
@@ -113,55 +113,36 @@ QScrollBar::add-line:horizontal {
 }
 
 QScrollBar::sub-line:horizontal {
-    background: none;
+    background: transparent;
 }
 
 QScrollBar:left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
-    background: none;
+    background: transparent;
 }
 
 QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
-    background: none;
+    background: transparent;
 }
 
 QScrollBar:vertical {
-    border: 1px solid $bordercolor;
-    background: $selectcolor;
-    width: 15px;
-    margin: 22px 0 22px 0;
+    background: transparent;
 }
 
 QScrollBar::handle:vertical {
-    background: $widgetcolor;
-    min-height: 20px;
+    background: $scrollhandlecolor;
 }
 
 QScrollBar::add-line:vertical {
-    border: 1px solid $bordercolor;
-    background: $selectcolor;
-    height: 20px;
-    subcontrol-position: bottom;
-    subcontrol-origin: margin;
+    background: transparent;
 }
 
 QScrollBar::sub-line:vertical {
-    border: 1px solid $bordercolor;
-    background: $selectcolor;
-    height: 20px;
-    subcontrol-position: top;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
-    width: 2px;
-    height: 3px;
-    background: $widgetcolor;
+    background: transparent;
 }
 
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
-    background: none;
+    background: transparent;
 }
-
 
 QToolBar {
     background: $widgetcolor;
