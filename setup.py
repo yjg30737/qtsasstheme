@@ -19,7 +19,8 @@ setup(
                                                'icon_text_button.scss',
                                                'menu_bar.scss',
                                                'main_widget.scss'],
-                  'qt_sass_theme_getter.var': ['variables.scss']
+                  'qt_sass_theme_getter.var': ['variables.scss'],
+                  'qt_sass_theme_getter.ico': ['icons.scss']
                   },
     description='Qt sass theme getter',
     url='https://github.com/yjg30737/qt-sass-theme-getter.git',

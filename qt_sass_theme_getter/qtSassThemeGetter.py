@@ -1,4 +1,4 @@
-import os, tempfile
+import os, tempfile, posixpath
 
 import qtsass
 
@@ -6,7 +6,28 @@ import qtsass
 class QtSassThemeGetter:
 
     def __init__(self):
-        pass
+        # set the icons
+        cur_dir = os.path.dirname(__file__)
+        ico_filename = os.path.join(cur_dir, 'ico/icons.scss')
+        import_abspath_str = f'$icopath: \'{cur_dir.replace(os.path.sep, posixpath.sep)}/\';'
+        with open(ico_filename, 'r+') as f:
+            fdata = f.read()
+            # if the path is still same
+            if fdata.find(import_abspath_str) != -1:
+                pass
+            else:
+                import re
+                m = re.search(r'\$icopath:\s(\"|\')(.+)(\"|\')', fdata)
+                # if the path was changed
+                if m:
+                    f.truncate(0)
+                    f.seek(0, 0)
+                    f.write(import_abspath_str + '\n' + '\n'.join(fdata.splitlines(True)[1:]))
+
+                # if the path is nowhere (which means it is the first time to set the path)
+                else:
+                    f.seek(0, 0)
+                    f.write(import_abspath_str + '\n' + fdata)
 
     def setThemeColor(self, bg_color, widget_color, text_color, hover_color, border_color,
                        select_color, disabled_color, text_widget_color, scroll_handle_color):

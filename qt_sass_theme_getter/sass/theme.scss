@@ -245,6 +245,16 @@ QTabBar::tab:!selected:hover {
     background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:0.4 #343434, stop:0.2 #343434, stop:0.1 #ffaa00);
 }
 
+QTabBar::close-button {
+     image: url($close);
+     padding: 3;
+}
+
+QTabBar::close-button:hover {
+     background-color: $hovercolor;
+     border-radius: 8;
+}
+
 QMenu {
     background-color: $widgetcolor;
     border: 1px solid $bordercolor;
