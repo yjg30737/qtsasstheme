@@ -176,6 +176,10 @@ QComboBox QAbstractItemView {
     selection-background-color: $bgcolor;
 }
 
+QSplitter {
+    background-color: $bgcolor;
+}
+
 QSplitter::handle:vertical {
     background: transparent;
     margin-left: -1px;
