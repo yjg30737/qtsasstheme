@@ -181,12 +181,12 @@ QSplitter {
 }
 
 QSplitter::handle:vertical {
-    background: $bordercolor;
+    background: $splitterhandlecolor;
     height: 1px;
 }
 
 QSplitter::handle:horizontal {
-    background: $bordercolor;
+    background: $splitterhandlecolor;
     width: 1px;
 }
 
