@@ -181,15 +181,13 @@ QSplitter {
 }
 
 QSplitter::handle:vertical {
-    background: transparent;
-    margin-left: -1px;
-    margin-right: -1px;
+    background: $bordercolor;
+    height: 1px;
 }
 
 QSplitter::handle:horizontal {
-    background: transparent;
-    margin-top: -1px;
-    margin-bottom: -1px;
+    background: $bordercolor;
+    width: 1px;
 }
 
 QTextEdit {
