@@ -9,7 +9,7 @@ with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
 
 setup(
     name='qt-sass-theme-getter',
-    version='0.0.20',
+    version='0.0.21',
     author='Jung Gyu Yoon',
     author_email='yjg30737@gmail.com',
     license='MIT',
@@ -20,7 +20,7 @@ setup(
                                                'menu_bar.scss',
                                                'main_widget.scss'],
                   'qt_sass_theme_getter.var': ['variables.scss'],
-                  'qt_sass_theme_getter.ico': ['icons.scss', 'close.svg']
+                  'qt_sass_theme_getter.ico': ['icons.scss', 'check.svg', 'close.svg']
                   },
     description='Qt sass theme getter',
     url='https://github.com/yjg30737/qt-sass-theme-getter.git',
