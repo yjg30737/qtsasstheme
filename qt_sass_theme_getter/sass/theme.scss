@@ -201,19 +201,17 @@ QGraphicsView {
 }
 
 QTabBar::tab {
-    color: #b1b1b1;
+    color: $textcolor;
     border: 1px solid $bordercolor;
-    border-bottom-style: none;
     background-color: $widgetcolor;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 2px;
-    margin-right: -1px;
 }
 
 QTabWidget::pane {
-    border: 1px solid $widgetcolor;
+    border: 1px solid $bordercolor;
     top: 1px;
 }
 
@@ -234,18 +232,15 @@ QTabBar::tab:first:!selected {
 }
 
 QTabBar::tab:!selected {
-    color: #b1b1b1;
+    color: $textcolor;
     border-bottom-style: solid;
     margin-top: 3px;
-    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:.4 #343434);
 }
 
 QTabBar::tab:!selected:hover {
-    border-top: 2px solid #ffaa00;
     padding-bottom: 3px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:0.4 #343434, stop:0.2 #343434, stop:0.1 #ffaa00);
 }
 
 QTabBar::close-button {
