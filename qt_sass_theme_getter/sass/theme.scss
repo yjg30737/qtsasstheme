@@ -147,7 +147,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 
 QToolBar {
     background: $widgetcolor;
-    border-top: 1px solid $bgcolor;
+    border-top: 1px solid $bordercolor;
 }
 
 QToolBar::handle {
@@ -203,6 +203,7 @@ QGraphicsView {
 QTabBar::tab {
     color: $textcolor;
     border: 1px solid $bordercolor;
+    border-bottom-color: $widgetcolor;
     background-color: $widgetcolor;
     padding-left: 10px;
     padding-right: 10px;
@@ -212,7 +213,6 @@ QTabBar::tab {
 
 QTabWidget::pane {
     border: 1px solid $bordercolor;
-    top: 1px;
 }
 
 QTabBar::tab:last {
