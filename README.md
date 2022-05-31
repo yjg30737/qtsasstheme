@@ -10,8 +10,8 @@ Default theme is dark-gray theme, my favorite.
 * <a href="https://github.com/spyder-ide/qtsass">qtsass</a> - For convert sass into css
 
 ## Method Overview
-* `setTheme(theme='dark')` - This method help people to easily set the theme. Currently (v0.0.25, 2022-05-31) this supports two theme - `'light'`, `'dark'`. Theme is set to dark by default. 
-* `setThemeColor(bg_color, widget_color, text_color, hover_color, border_color, select_color, disabled_color, text_widget_color, scroll_handle_color)` - you can set the theme color by yourself. <b>Give 6-digit hex color string such as #FF0000.</b>
+* `setTheme(theme='dark')` - this method help people to easily set the theme. Currently (v0.0.25, 2022-05-31) this supports two theme - `'light'`, `'dark'`. Theme is set to dark by default. 
+* `setThemeColor(bg_color, widget_color, text_color, hover_color, border_color, select_color, disabled_color, text_widget_color, scroll_handle_color)` - in this case, you can set the theme color by yourself. <b>Give 6-digit hex color string such as #FF0000.</b>
   * bg_color - background color
   * widget_color - widget color
   * text_color - text color
