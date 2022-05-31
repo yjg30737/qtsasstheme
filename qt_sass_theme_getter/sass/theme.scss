@@ -158,7 +158,7 @@ QToolBar::handle {
 }
 
 QToolBar::separator {
-    background: $bgcolor;
+    background: $bordercolor;
     width: 1px;
     margin: 2px;
 }
@@ -278,7 +278,7 @@ QMenu::item:disabled {
 }
 
 QMenu::separator {
-    background-color: $bgcolor;
+    background-color: $bordercolor;
     height: 1px;
 }
 
