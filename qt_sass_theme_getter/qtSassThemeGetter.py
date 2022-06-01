@@ -8,7 +8,7 @@ class QtSassThemeGetter:
     def __init__(self):
         # set the icons
         cur_dir = os.path.dirname(__file__)
-        ico_filename = os.path.join(cur_dir, 'ico/icons.scss')
+        ico_filename = os.path.join(cur_dir, 'ico/_icons.scss')
         import_abspath_str = f'$icopath: \'{cur_dir.replace(os.path.sep, posixpath.sep)}/\';'
         with open(ico_filename, 'r+') as f:
             fdata = f.read()
@@ -30,7 +30,7 @@ class QtSassThemeGetter:
 
     def setTheme(self, theme='dark'):
         cur_dir = os.path.dirname(__file__)
-        var_filename = os.path.join(cur_dir, 'var/variables.scss')
+        var_filename = os.path.join(cur_dir, 'var/_variables.scss')
         with open(var_filename, 'r+') as f:
             fdata = f.read()
             if theme == 'dark':
@@ -58,7 +58,7 @@ $scrollhandlecolor: {scroll_handle_color};
 $splitterhandlecolor: {splitter_handle_color};
 '''
         cur_dir = os.path.dirname(__file__)
-        var_filename = os.path.join(cur_dir, 'var/variables.scss')
+        var_filename = os.path.join(cur_dir, 'var/_variables.scss')
         with open(var_filename, 'w') as f:
             f.write(variables)
 
