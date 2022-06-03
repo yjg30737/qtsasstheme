@@ -47,11 +47,15 @@ Dark theme
 ![image](https://user-images.githubusercontent.com/55078043/171834481-c28c8c1c-dcf7-4d29-8a8a-163d446be2af.png)
 
 
+*
+*
+*
+*
 
 
-## Old Documentation (just walk it off)
+### Old Documentation (just walk it off)
 
-### Old Functions (potentially deprecated)
+#### Old Functions (potentially deprecated)
 * `setTheme(theme='dark')` - this method help people to easily set the theme. Currently (v0.0.25, 2022-05-31) this supports two theme - `'light'`, `'dark'`. Theme is set to dark by default. 
 * `setThemeColor(bg_color, widget_color, text_color, hover_color, border_color, select_color, disabled_color, text_widget_color, scroll_handle_color)` - in this case, you can set the theme color by yourself. <b>Give 6-digit hex color string such as #FF0000.</b>
   * bg_color - background color
@@ -70,7 +74,7 @@ Dark theme
 * `getMenuBarStyle() -> str` - use it to `QMenuBar`.
 * `getMainWidgetStyle() -> str` - use it to "top level" `QWidget`.
 
-## Old Example
+#### Old Example
 Here's basic usage - get the style code and modify it(such as getThemeStyle() + QLineEdit { ... }), and set it to desired widget.
 
 <a href="https://github.com/yjg30737/pyqt-dark-gray-theme/blob/main/pyqt_dark_gray_theme/darkGrayTheme.py">pyqt-dark-gray-theme/darkGrayTheme.py</a> - return the dark-gray styles using qt-sass-theme-getter pacakge, even though dark-gray is default.
