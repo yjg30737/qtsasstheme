@@ -198,6 +198,7 @@ QTextEdit {
 
 QGraphicsView {
     background-color: $widgetcolor;
+    border: 1px solid $bordercolor;
 }
 
 QTabBar::tab {
