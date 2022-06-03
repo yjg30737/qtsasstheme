@@ -13,7 +13,11 @@ class QtSassThemeGetter:
         # set the icons
         cur_dir = os.path.dirname(__file__)
         ico_filename = os.path.join(cur_dir, 'ico/_icons.scss')
-        import_abspath_str = f'$icopath: \'{cur_dir.replace(os.path.sep, posixpath.sep)}/\';'
+        icon_path = cur_dir.replace(os.path.sep, posixpath.sep)
+        self.__setIconPath(ico_filename, icon_path)
+
+    def __setIconPath(self, ico_filename: str, icon_path: str):
+        import_abspath_str = f'$icopath: \'{icon_path}/\';'
         with open(ico_filename, 'r+') as f:
             fdata = f.read()
             # if the path is still same
@@ -98,24 +102,7 @@ $splitterhandlecolor: {splitter_handle_color};
 
         ico_filename = 'ico/_icons.scss'
 
-        import_abspath_str = f'$icopath: \'{output_dirname}/\';'
-        with open(ico_filename, 'r+') as f:
-            fdata = f.read()
-            # if the path is still same
-            if fdata.find(import_abspath_str) != -1:
-                pass
-            else:
-                m = re.search(r'\$icopath:\s(\"|\')(.+)(\"|\')', fdata)
-                # if the path was changed
-                if m:
-                    f.truncate(0)
-                    f.seek(0, 0)
-                    f.write(import_abspath_str + '\n' + '\n'.join(fdata.splitlines(True)[1:]))
-
-                # if the path is nowhere (which means it is the first time to set the path)
-                else:
-                    f.seek(0, 0)
-                    f.write(import_abspath_str + '\n' + fdata)
+        self.__setIconPath(ico_filename, output_dirname)
 
         qtsass.compile_dirname('sass', '.')
 
