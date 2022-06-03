@@ -27,6 +27,7 @@ setup(
     long_description_content_type='text/markdown',
     long_description=long_description,
     install_requires=[
-        'qtsass'
+        'qtsass',
+        'pyqt-svg-button>=0.0.1'
     ]
 )
