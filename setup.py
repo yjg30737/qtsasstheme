@@ -20,7 +20,11 @@ setup(
                                                'menu_bar.scss',
                                                'main_widget.scss'],
                   'qt_sass_theme_getter.var': ['_variables.scss'],
-                  'qt_sass_theme_getter.ico': ['_icons.scss', 'check.svg', 'close.svg']
+                  'qt_sass_theme_getter.var.dark': ['_variables.scss'],
+                  'qt_sass_theme_getter.var.light': ['_variables.scss'],
+                  'qt_sass_theme_getter.ico': ['_icons.scss', 'check.svg', 'close.svg'],
+                  'qt_sass_theme_getter.ico.dark': ['_icons.scss', 'check.svg', 'close.svg'],
+                  'qt_sass_theme_getter.ico.light': ['_icons.scss', 'check.svg', 'close.svg']
                   },
     description='Qt sass theme getter',
     url='https://github.com/yjg30737/qt-sass-theme-getter.git',
