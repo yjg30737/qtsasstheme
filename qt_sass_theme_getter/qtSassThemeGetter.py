@@ -36,21 +36,6 @@ class QtSassThemeGetter:
                     f.seek(0, 0)
                     f.write(import_abspath_str + '\n' + fdata)
 
-    def setTheme(self, theme='dark'):
-        cur_dir = os.path.dirname(__file__)
-        var_filename = os.path.join(cur_dir, 'var/_variables.scss')
-        with open(var_filename, 'r+') as f:
-            fdata = f.read()
-            if theme == 'dark':
-                theme_line = '$dark-theme: true;'
-            elif theme == 'light':
-                theme_line = '$dark-theme: false;'
-            else:
-                raise Exception(f"No such theme type - {theme}")
-            f.truncate(0)
-            f.seek(0, 0)
-            f.write(theme_line + '\n' + ''.join(fdata.splitlines(True)[1:]))
-
     def setThemeColor(self, bg_color, widget_color, text_color, hover_color, border_color,
                        select_color, disabled_color, text_widget_color, scroll_handle_color,
                       splitter_handle_color):
