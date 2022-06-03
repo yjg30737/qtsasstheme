@@ -36,25 +36,6 @@ class QtSassThemeGetter:
                     f.seek(0, 0)
                     f.write(import_abspath_str + '\n' + fdata)
 
-    def setThemeColor(self, bg_color, widget_color, text_color, hover_color, border_color,
-                       select_color, disabled_color, text_widget_color, scroll_handle_color,
-                      splitter_handle_color):
-        variables = f'''$bgcolor: {bg_color};
-$widgetcolor: {widget_color};
-$textcolor: {text_color};
-$hovercolor: {hover_color};
-$bordercolor: {border_color};
-$selectcolor: {select_color};
-$disabledcolor: {disabled_color};
-$textwidgetcolor: {text_widget_color};
-$scrollhandlecolor: {scroll_handle_color};
-$splitterhandlecolor: {splitter_handle_color};
-'''
-        cur_dir = os.path.dirname(__file__)
-        var_filename = os.path.join(cur_dir, 'var/_variables.scss')
-        with open(var_filename, 'w') as f:
-            f.write(variables)
-
     def __getStyle(self, filename):
         cur_dir = os.path.dirname(__file__)
         sass_dirname = os.path.join(cur_dir, 'sass')
