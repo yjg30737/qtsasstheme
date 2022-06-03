@@ -61,21 +61,7 @@ Dark theme
 *
 
 
-### Old Documentation (just walk it off)
-
 #### Old Functions (potentially deprecated)
-* `setTheme(theme='dark')` - this method help people to easily set the theme. Currently (v0.0.25, 2022-05-31) this supports two theme - `'light'`, `'dark'`. Theme is set to dark by default. 
-* `setThemeColor(bg_color, widget_color, text_color, hover_color, border_color, select_color, disabled_color, text_widget_color, scroll_handle_color)` - in this case, you can set the theme color by yourself. <b>Give 6-digit hex color string such as #FF0000.</b>
-  * bg_color - background color
-  * widget_color - widget color
-  * text_color - text color
-  * hover_color - certain widgets' color when mouse cursor is hovering
-  * border_color - color of widgets' border
-  * select_color - selected widgets' color
-  * disabled_color - disabled widgets' color
-  * text_widget_color - background color of text widget such as `QTextEdit/QTextBrowser`
-  * scroll_handle_color - horizontal/vertical `QScrollBar`'s handle color
-* `getThemeFiles(output_dir = os.getcwd())` - you can save css files in `output_dir` which were converted from .scss files included in this package.
 * `getThemeStyle() -> str` - use it to `QMainWindow`, `QDialog`.
 * `getIconButtonStyle() -> str` - use it to `QPushButton/QToolButton` which has icon.
 * `getIconTextButtonStyle() -> str` - use it to `QPushButton/QToolButton`.
