@@ -18,7 +18,7 @@ This supported only two theme currently.
 Theme files will be saved in 'res' subdirectory of `output_path` after you called `getThemeFiles`.
 
 ### `setThemeFiles(main_window: QWidget, input_path='res', exclude_type_lst: list = [])`
-Right after calling `getThemeFiles`, you can set the style with calling `setThemeFiles`. So far, the only argument that mattered is `main_window`. Give widget to that in order to set the style.
+Right after calling `getThemeFiles`, you can set the style with calling `setThemeFiles`.
 
 ## Example
 ### Code Sample
