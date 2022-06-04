@@ -48,32 +48,3 @@ Light theme
 Dark theme
 
 ![image](https://user-images.githubusercontent.com/55078043/171988919-d3d4148f-02fa-4322-9d8e-a52e2b2a0a55.png)
-
-
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-
-
-#### Old Functions (potentially deprecated)
-* `getThemeStyle() -> str` - use it to `QMainWindow`, `QDialog`.
-* `getIconButtonStyle() -> str` - use it to `QPushButton/QToolButton` which has icon.
-* `getIconTextButtonStyle() -> str` - use it to `QPushButton/QToolButton`.
-* `getMenuBarStyle() -> str` - use it to `QMenuBar`.
-* `getMainWidgetStyle() -> str` - use it to "top level" `QWidget`.
-
-#### Old Example
-Here's basic usage - get the style code and modify it(such as getThemeStyle() + QLineEdit { ... }), and set it to desired widget.
-
-<a href="https://github.com/yjg30737/pyqt-dark-gray-theme/blob/main/pyqt_dark_gray_theme/darkGrayTheme.py">pyqt-dark-gray-theme/darkGrayTheme.py</a> - return the dark-gray styles using qt-sass-theme-getter pacakge, even though dark-gray is default.
-
-<a href="https://github.com/yjg30737/pyqt-style-setter/blob/main/pyqt_style_setter/styleSetter.py">pyqt-style-setter/styleSetter.py</a> - set the style of some widgets
