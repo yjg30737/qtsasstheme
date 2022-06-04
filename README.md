@@ -39,12 +39,11 @@ if __name__ == "__main__":
 ### Result
 Light theme
 
-![image](https://user-images.githubusercontent.com/55078043/171834443-45fd1c72-2a67-4569-a47f-62d197a40610.png)
-
+![image](https://user-images.githubusercontent.com/55078043/171988935-676ea36c-657a-403c-be7a-93c89cb60d6b.png)
 
 Dark theme
 
-![image](https://user-images.githubusercontent.com/55078043/171834481-c28c8c1c-dcf7-4d29-8a8a-163d446be2af.png)
+![image](https://user-images.githubusercontent.com/55078043/171988919-d3d4148f-02fa-4322-9d8e-a52e2b2a0a55.png)
 
 
 *
