@@ -1,9 +1,9 @@
 $bgcolor: #555555;
 $widgetcolor: #444444;
 $textcolor: #DDDDDD;
-$hovercolor: #666666;
+$hovercolor: lighten($widgetcolor, 3);
 $bordercolor: #777777;
-$selectcolor: #333333;
+$selectcolor: darken($widgetcolor, 3);
 $disabledcolor: #AAAAAA;
 $textwidgetcolor: #222222;
 $scrollhandlecolor: #313131;
