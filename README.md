@@ -17,8 +17,12 @@ This supported only two theme currently.
 * light
 Theme files will be saved in 'res' subdirectory of `output_path` after you called `getThemeFiles`.
 
+You can change the `variables.scss`'s variables whatever you want.
+
 #### `setThemeFiles(main_window: QWidget, input_path='res', exclude_type_lst: list = [])`
 Right after calling `getThemeFiles`, you can set the style with calling `setThemeFiles`.
+
+Note: Don't change the current directory with function such as `os.chdir` after calling `getThemeFiles` and before calling `setThemeFiles`. `FileNotFoundError` will be most likely occurred. 
 
 ## Example
 ### Code Sample
