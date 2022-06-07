@@ -24,7 +24,7 @@ Theme files will be saved in 'res' directory of `output_path` after you called `
 
 `ico` directory holds icon files which will be being used in theme. For example, light icons will be being used in dark theme, dark icons will be being used in light theme. `_icons.scss` makes sass files in `sass` directory refer to icons in this directory.
 
-`sass` directory holds the scss files which will be turned into css files.
+`sass` directory holds the scss files which will be converted into css files.
 
 `var` directory holds the `_variables.scss` which contains the color(e.g. color of background/widget/border...) variables. You can change the `_variables.scss`'s variables whatever you want, if you want to set custom variables.
 
@@ -36,6 +36,8 @@ Right after calling `getThemeFiles`, you can set the style with calling `setThem
 After calling it, 'res' directory looks like this:
 
 ![image](https://user-images.githubusercontent.com/55078043/172270071-d49a246a-7efb-463b-b0f8-bb70179a75f6.png)
+
+scss files successfully convert into css files.
 
 Note: Don't change the current directory with function such as `os.chdir` after calling `getThemeFiles` and before calling `setThemeFiles`. `FileNotFoundError` will be most likely occurred. 
 
