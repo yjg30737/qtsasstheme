@@ -15,9 +15,9 @@ Old name of this is `qt-sass-theme-getter`.
 ## Method Overview
 #### `getThemeFiles(theme: str = 'dark', output_path=os.getcwd())`
 Supporting theme: 
-* dark
+* dark_gray
 * dark_blue
-* light
+* light_gray
 * light_blue
 
 Theme files will be saved in 'res' directory of `output_path` after you called `getThemeFiles`.
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     widget = SettingsDialog()
     g = QtSassTheme()
-    g.getThemeFiles(theme='dark')
+    g.getThemeFiles(theme='dark_gray')
     # g.getThemeFiles(theme='dark_blue') - if you want to set dark blue theme
     g.setThemeFiles(main_window=widget)
     widget.show()
@@ -67,18 +67,18 @@ if __name__ == "__main__":
 ```
 
 ### Result
-Dark theme
+Dark gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/171988919-d3d4148f-02fa-4322-9d8e-a52e2b2a0a55.png)
+![image](https://user-images.githubusercontent.com/55078043/172339386-e7306141-af73-41db-a27d-e7145ba474f6.png)
 
 Dark blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/172271943-393e0480-7b62-4228-a32f-2e48adc7895b.png)
+![image](https://user-images.githubusercontent.com/55078043/172339085-a4236c09-bff5-4087-ad48-6548ebbe469a.png)
 
-Light theme
+Light gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/171988935-676ea36c-657a-403c-be7a-93c89cb60d6b.png)
+![image](https://user-images.githubusercontent.com/55078043/172339438-6c290c9d-7d37-42f4-9005-c947593edf5e.png)
 
 Light blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/172271919-18de2918-3932-4515-9e1f-b0cf7d212c46.png)
+![image](https://user-images.githubusercontent.com/55078043/172339501-0a584c5a-7b50-4517-a8ff-fc3307d5b733.png)
