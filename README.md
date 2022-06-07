@@ -1,10 +1,10 @@
-# qt-sass-theme-getter
+# qtsasstheme
 Set the Qt theme (e.g. dark/light/darkblue/lightblue) easily
 
 This is using SCSS to set the light/dark theme to PyQt GUI, which is quite efficient.
 
 ## Setup
-`python -m pip install qt-sass-theme-getter`
+`python -m pip install qtsasstheme`
 
 ## Included Packages
 * <a href="https://github.com/spyder-ide/qtsass">qtsass</a> - for converting sass into css
