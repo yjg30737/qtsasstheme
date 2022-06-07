@@ -13,7 +13,7 @@ Old name of this is `qt-sass-theme-getter`.
 * <a href="https://github.com/yjg30737/pyqt-svg-button">pyqt-svg-button</a> - for supporting svg button
 
 ## Method Overview
-#### `getThemeFiles(theme: str = 'dark', output_path=os.getcwd())`
+#### `getThemeFiles(theme: str = 'dark_gray', output_path=os.getcwd())`
 Supporting theme: 
 * dark_gray
 * dark_blue
