@@ -16,9 +16,9 @@ This supported only two theme currently.
 * dark
 * light
 
-Theme files will be saved in 'res' subdirectory of `output_path` after you called `getThemeFiles`.
+Theme files will be saved in 'res' directory of `output_path` after you called `getThemeFiles`.
 
-'res' subdirectory looks like this:
+'res' directory looks like this:
 
 ![image](https://user-images.githubusercontent.com/55078043/172268659-860a5633-7b73-4848-92c4-b946b035b75a.png)
 
@@ -32,6 +32,10 @@ Theme files will be saved in 'res' subdirectory of `output_path` after you calle
 
 #### `setThemeFiles(main_window: QWidget, input_path='res', exclude_type_lst: list = [])`
 Right after calling `getThemeFiles`, you can set the style with calling `setThemeFiles`.
+
+After calling it, 'res' directory looks like this:
+
+![image](https://user-images.githubusercontent.com/55078043/172270071-d49a246a-7efb-463b-b0f8-bb70179a75f6.png)
 
 Note: Don't change the current directory with function such as `os.chdir` after calling `getThemeFiles` and before calling `setThemeFiles`. `FileNotFoundError` will be most likely occurred. 
 
