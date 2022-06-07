@@ -27,6 +27,8 @@ Theme files will be saved in 'res' subdirectory of `output_path` after you calle
 
 `var` directory holds the `_variables.scss` which contains the color(e.g. color of background/widget/border...) variables. You can change the `_variables.scss`'s variables whatever you want, if you want to set custom variables.
 
+<hr>
+
 #### `setThemeFiles(main_window: QWidget, input_path='res', exclude_type_lst: list = [])`
 Right after calling `getThemeFiles`, you can set the style with calling `setThemeFiles`.
 
