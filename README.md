@@ -17,7 +17,15 @@ This supported only two theme currently.
 * light
 Theme files will be saved in 'res' subdirectory of `output_path` after you called `getThemeFiles`.
 
-You can change the `variables.scss`'s variables whatever you want.
+'res' subdirectory looks like this:
+
+![image](https://user-images.githubusercontent.com/55078043/172268659-860a5633-7b73-4848-92c4-b946b035b75a.png)
+
+`ico` directory holds icon files which will be being used in theme. For example, light icons will be being used in dark theme, dark icons will be being used in light theme. `_icons.scss` makes sass files in `sass` directory refer to icons in this directory.
+
+`sass` directory holds the scss files which will be turned into css files.
+
+`var` directory holds the `_variables.scss` which contains the color(e.g. color of background/widget/border...) variables. You can change the `_variables.scss`'s variables whatever you want, if you want to set custom variables.
 
 #### `setThemeFiles(main_window: QWidget, input_path='res', exclude_type_lst: list = [])`
 Right after calling `getThemeFiles`, you can set the style with calling `setThemeFiles`.
