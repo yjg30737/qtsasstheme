@@ -12,9 +12,11 @@ This is using SCSS to set the light/dark theme to PyQt GUI, which is quite effic
 
 ## Method Overview
 #### `getThemeFiles(theme: str = 'dark', output_path=os.getcwd())`
-This supported only two theme currently. 
+Supporting theme: 
 * dark
+* dark_blue
 * light
+* light_blue
 
 Theme files will be saved in 'res' directory of `output_path` after you called `getThemeFiles`.
 
@@ -55,17 +57,26 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     widget = SettingsDialog()
     g = QtSassThemeGetter()
-    g.getThemeFiles(theme='light') # theme='dark'
+    g.getThemeFiles(theme='dark')
+    # g.getThemeFiles(theme='dark_blue') - if you want to set dark blue theme
     g.setThemeFiles(main_window=widget)
     widget.show()
     app.exec_()
 ```
 
 ### Result
+Dark theme
+
+![image](https://user-images.githubusercontent.com/55078043/171988919-d3d4148f-02fa-4322-9d8e-a52e2b2a0a55.png)
+
+Dark blue theme
+
+![image](https://user-images.githubusercontent.com/55078043/172271943-393e0480-7b62-4228-a32f-2e48adc7895b.png)
+
 Light theme
 
 ![image](https://user-images.githubusercontent.com/55078043/171988935-676ea36c-657a-403c-be7a-93c89cb60d6b.png)
 
-Dark theme
+Light blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/171988919-d3d4148f-02fa-4322-9d8e-a52e2b2a0a55.png)
+![image](https://user-images.githubusercontent.com/55078043/172271919-18de2918-3932-4515-9e1f-b0cf7d212c46.png)
