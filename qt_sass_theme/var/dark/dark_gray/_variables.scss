@@ -1,0 +1,10 @@
+$bgcolor: #444444;
+$widgetcolor: darken($bgcolor, 10);
+$textcolor: #DDDDDD;
+$hovercolor: lighten($widgetcolor, 3);
+$bordercolor: lighten($widgetcolor, 20);
+$selectcolor: darken($widgetcolor, 3);
+$disabledcolor: #AAAAAA;
+$textwidgetcolor: darken($widgetcolor, 15);
+$scrollhandlecolor: lighten($widgetcolor, 15);
+$splitterhandlecolor: darken($widgetcolor, 10);

@@ -44,12 +44,12 @@ class QtSassTheme:
         css = qtsass.compile_filename(os.path.join(sass_dirname, filename), temp_file)
         return css
 
-    def getThemeFiles(self, theme: str = 'dark', output_path=os.getcwd()):
+    def getThemeFiles(self, theme: str = 'dark_gray', output_path=os.getcwd()):
         cur_dir = os.path.dirname(__file__)
         theme_prefix = theme.split('_')[0]
         ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_prefix))
         sass_dirname = os.path.join(cur_dir, 'sass')
-        var_dirname = os.path.join(cur_dir, os.path.join('var', theme))
+        var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_prefix), theme))
         os.chdir(output_path)
         output_dirname = 'res'
         if os.path.exists(output_dirname):
