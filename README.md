@@ -49,7 +49,7 @@ Note: Don't change the current directory with function such as `os.chdir` after 
 ```python
 from PyQt5.QtWidgets import QApplication
 from pyqt_timer.settingsDialog import SettingsDialog
-from qt_sass_theme_getter import QtSassTheme
+from qt_sass_theme import QtSassTheme
 
 if __name__ == "__main__":
     import sys
