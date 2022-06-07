@@ -316,6 +316,10 @@ QTimeEdit {
     color: $textcolor;
 }
 
+QStatusBar {
+    background-color: $widgetcolor;
+}
+
 QStatusBar::item {
     border: none;
 }
