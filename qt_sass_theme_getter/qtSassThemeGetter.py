@@ -46,7 +46,8 @@ class QtSassThemeGetter:
 
     def getThemeFiles(self, theme: str = 'dark', output_path=os.getcwd()):
         cur_dir = os.path.dirname(__file__)
-        ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme))
+        theme_prefix = theme.split('_')[0]
+        ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_prefix))
         sass_dirname = os.path.join(cur_dir, 'sass')
         var_dirname = os.path.join(cur_dir, os.path.join('var', theme))
         os.chdir(output_path)

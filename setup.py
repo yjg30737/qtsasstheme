@@ -21,7 +21,9 @@ setup(
                                                'main_widget.scss'],
                   'qt_sass_theme_getter.var': ['_variables.scss'],
                   'qt_sass_theme_getter.var.dark': ['_variables.scss'],
+                  'qt_sass_theme_getter.var.dark_blue': ['_variables.scss'],
                   'qt_sass_theme_getter.var.light': ['_variables.scss'],
+                  'qt_sass_theme_getter.var.light_blue': ['_variables.scss'],
                   'qt_sass_theme_getter.ico': ['_icons.scss', 'check.svg', 'close.svg'],
                   'qt_sass_theme_getter.ico.dark': ['_icons.scss', 'check.svg', 'close.svg'],
                   'qt_sass_theme_getter.ico.light': ['_icons.scss', 'check.svg', 'close.svg']
