@@ -7,7 +7,7 @@ import shutil
 import qtsass
 
 
-class QtSassThemeGetter:
+class QtSassTheme:
 
     def __init__(self):
         # set the icons

@@ -45,18 +45,18 @@ Note: Don't change the current directory with function such as `os.chdir` after 
 
 ## Example
 ### Code Sample
+
 ```python
 from PyQt5.QtWidgets import QApplication
 from pyqt_timer.settingsDialog import SettingsDialog
-from qt_sass_theme_getter import QtSassThemeGetter
-
+from qt_sass_theme_getter import QtSassTheme
 
 if __name__ == "__main__":
     import sys
 
     app = QApplication(sys.argv)
     widget = SettingsDialog()
-    g = QtSassThemeGetter()
+    g = QtSassTheme()
     g.getThemeFiles(theme='dark')
     # g.getThemeFiles(theme='dark_blue') - if you want to set dark blue theme
     g.setThemeFiles(main_window=widget)

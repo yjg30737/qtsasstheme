@@ -1,1 +1,1 @@
-from qt_sass_theme_getter.qtSassThemeGetter import QtSassThemeGetter
+from qt_sass_theme_getter.qtSassTheme import QtSassTheme
