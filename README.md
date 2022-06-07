@@ -1,5 +1,5 @@
 # qtsasstheme
-Set the Qt theme (e.g. dark/light/darkblue/lightblue) easily
+Set the Qt theme (e.g. darkgray/lightgray/darkblue/lightblue) easily
 
 This is using SCSS to set the light/dark theme to PyQt GUI, which is quite efficient.
 
