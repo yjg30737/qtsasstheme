@@ -15,6 +15,7 @@ This is using SCSS to set the light/dark theme to PyQt GUI, which is quite effic
 This supported only two theme currently. 
 * dark
 * light
+
 Theme files will be saved in 'res' subdirectory of `output_path` after you called `getThemeFiles`.
 
 'res' subdirectory looks like this:
