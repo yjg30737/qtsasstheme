@@ -71,17 +71,23 @@ class QtSassTheme:
         self.__setIconPath(ico_filename, output_dirname)
 
     def setThemeFiles(self, main_window: QWidget, input_path='res', exclude_type_lst: list = []):
+        if os.path.basename(os.getcwd()) != input_path:
+            input_path = os.path.join(os.getcwd(), input_path)
+            os.chdir(input_path)
         qtsass.compile_dirname('sass', '.')
-
         ico_filename = 'ico/_icons.scss'
-        os.remove(ico_filename)
-        shutil.rmtree('sass')
-        shutil.rmtree('var')
+        sass_dirname = 'sass'
+        var_dirname = 'var'
+        if os.path.exists(ico_filename):
+            os.remove(ico_filename)
+        if os.path.exists(sass_dirname):
+            shutil.rmtree(sass_dirname)
+        if os.path.exists(var_dirname):
+            shutil.rmtree(var_dirname)
 
         os.chdir('../')
         if os.path.isdir(input_path):
             f_lst = ['theme.css', 'main_widget.css', 'icon_button.css', 'icon_text_button.css', 'menu_bar.css']
-            input_path = os.path.join(os.getcwd(), input_path)
             f_lst = [os.path.join(input_path, f) for f in f_lst]
 
             with open(f_lst[0], 'r') as f:
