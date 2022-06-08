@@ -12,7 +12,8 @@ Old name of this is `qt-sass-theme-getter`.
 * <a href="https://github.com/spyder-ide/qtsass">qtsass</a> - for converting sass into css
 * <a href="https://github.com/yjg30737/pyqt-svg-button">pyqt-svg-button</a> - for supporting svg button
 
-## Method Overview
+## Detailed Description 
+### Method Overview
 #### `getThemeFiles(theme: str = 'dark_gray', output_path=os.getcwd())`
 Supporting theme: 
 * dark_gray
@@ -30,7 +31,7 @@ Theme files will be saved in 'res' directory of `output_path` after you called `
 
 `sass` directory holds the scss files which will be converted into css files.
 
-`var` directory holds the `_variables.scss` which contains the color(e.g. color of background/widget/border...) variables. You can change the `_variables.scss`'s variables whatever you want, if you want to set custom variables.
+`var` directory holds the `_variables.scss` which contains the color(e.g. color of background/widget/border...) variables. 
 
 <hr>
 
@@ -43,7 +44,57 @@ After calling it, 'res' directory looks like this:
 
 scss files successfully convert into css files.
 
-Note: Don't change the current directory with function such as `os.chdir` after calling `getThemeFiles` and before calling `setThemeFiles`. `FileNotFoundError` will be most likely occurred. 
+Note: Don't change the current directory with function such as `os.chdir` after calling `getThemeFiles` and before calling `setThemeFiles`. `FileNotFoundError` will be most likely occurred.
+
+### Customizing Theme
+
+If you want to set customized theme, do it with changing the `_variables.scss`'s variables.
+
+This is the way how to do it:
+
+1. Calling `getThemeFiles`
+```python
+g = QtSassTheme()
+g.getThemeFiles() 
+```
+
+![image](https://user-images.githubusercontent.com/55078043/172735025-7bf78c88-3f42-4bfc-8c00-726bdef764a5.png)
+
+'res' directory like above will be generated.
+
+2. Change the variables
+
+open the `_variables.scss` and change the `$bgcolor`'s value.
+
+This is `_variables.scss`'s contents(dark-gray theme).
+
+```scss
+$bgcolor: #444444;
+$widgetcolor: darken($bgcolor, 10);
+$textcolor: #DDDDDD;
+$hovercolor: lighten($widgetcolor, 3);
+$bordercolor: lighten($widgetcolor, 20);
+$selectcolor: darken($widgetcolor, 3);
+$disabledcolor: #AAAAAA;
+$textwidgetcolor: darken($widgetcolor, 15);
+$scrollhandlecolor: lighten($widgetcolor, 15);
+$splitterhandlecolor: darken($widgetcolor, 10);
+```
+
+You can change any colors.
+
+In this example i will change the $bgcolor from #444444 to #006600(dark-green).
+
+3. Calling `setThemeFiles`
+```python
+app = QApplication(sys.argv)
+w = SampleWidget()
+g.setThemeFiles(w)
+app.exec_()
+```
+
+![image](https://user-images.githubusercontent.com/55078043/172736296-a78a32fa-1a1a-403a-a11c-1de29b372316.png)
+
 
 ## Example
 ### Code Sample
