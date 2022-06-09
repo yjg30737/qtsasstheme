@@ -14,8 +14,8 @@ Old name of this is `qt-sass-theme-getter`.
 
 ## Detailed Description 
 ### Method Overview
-#### `getThemeFiles(theme: str = 'dark_gray', output_path=os.getcwd())`
-Official theme: 
+#### `getThemeFiles(theme: str = 'dark_gray', background_darker=False, output_path=os.getcwd())`
+Available value of theme argument:
 * dark_gray
 * dark_blue
 * light_gray
@@ -23,7 +23,13 @@ Official theme:
 
 You can also make your own theme with [customizing theme](#customizing-theme).
 
-Theme files will be saved in 'res' directory of `output_path` after you called `getThemeFiles`.
+`background_darker` decides whether the background color is going to be darker than general widget color or not.
+
+If that is set to `True`, background color is darker than general widget color.
+
+If that is set to `False`, background color is lighter than general widget color.
+
+`output_path` is the path that 'res' directory will be made which is holding a bunch of theme files after you called `getThemeFiles`.
 
 'res' directory looks like this:
 
