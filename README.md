@@ -25,9 +25,13 @@ You can also make your own theme with [customizing theme](#customizing-theme).
 
 `background_darker` decides whether the background color is going to be darker than general widget color or not.
 
-If that is set to `True`, background color is darker than general widget color.
+If that is set to `True`, background color is darker than general widget color. See image below.
 
-If that is set to `False`, background color is lighter than general widget color.
+![image](https://user-images.githubusercontent.com/55078043/172755215-e246ec18-f3b8-416c-9fc6-569f554181e3.png)
+
+If that is set to `False`(which is set by default), background color is lighter than general widget color. See image below.
+
+![image](https://user-images.githubusercontent.com/55078043/172755149-b01c7ceb-cb62-4538-a285-ad7fe7b28b7a.png)
 
 `output_path` is the path that 'res' directory will be made which is holding a bunch of theme files after you called `getThemeFiles`.
 
@@ -129,16 +133,16 @@ if __name__ == "__main__":
 ### Result
 Dark gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/172339386-e7306141-af73-41db-a27d-e7145ba474f6.png)
+![image](https://user-images.githubusercontent.com/55078043/172755215-e246ec18-f3b8-416c-9fc6-569f554181e3.png)
 
 Dark blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/172339085-a4236c09-bff5-4087-ad48-6548ebbe469a.png)
+![image](https://user-images.githubusercontent.com/55078043/172755432-c3d552a8-4d93-43b8-a5d6-fd0ed6ff7d2d.png)
 
 Light gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/172339438-6c290c9d-7d37-42f4-9005-c947593edf5e.png)
+![image](https://user-images.githubusercontent.com/55078043/172755465-be037efa-87df-4d38-b8e8-de9b47015fba.png)
 
 Light blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/172339501-0a584c5a-7b50-4517-a8ff-fc3307d5b733.png)
+![image](https://user-images.githubusercontent.com/55078043/172755492-519c485b-54b9-4d87-aede-b64986c2ae90.png)
