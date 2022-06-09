@@ -15,11 +15,13 @@ Old name of this is `qt-sass-theme-getter`.
 ## Detailed Description 
 ### Method Overview
 #### `getThemeFiles(theme: str = 'dark_gray', output_path=os.getcwd())`
-Supporting theme: 
+Official theme: 
 * dark_gray
 * dark_blue
 * light_gray
 * light_blue
+
+You can also make your own theme with [customizing theme](#customizing-theme).
 
 Theme files will be saved in 'res' directory of `output_path` after you called `getThemeFiles`.
 
