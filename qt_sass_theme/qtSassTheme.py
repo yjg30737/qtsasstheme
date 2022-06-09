@@ -36,6 +36,24 @@ class QtSassTheme:
                     f.seek(0, 0)
                     f.write(import_abspath_str + '\n' + fdata)
 
+    def __setVarPath(self, var_filename: str, background_darker=False):
+        if background_darker:
+             with open(var_filename, 'r+') as f:
+                fdata = f.read()
+                m1 = re.search(r'\$bgcolor:(.+\n)', fdata)
+                m2 = re.search(r'\$widgetcolor:(.+\n)', fdata)
+                if m1 and m2:
+                    w_color_v = m1.group(1)
+                    bg_color_v = m2.group(1).replace('bgcolor', 'widgetcolor')
+                    background_darker_code = f'$widgetcolor:{w_color_v}' \
+                                             f'$bgcolor:{bg_color_v}'
+                    background_darker_code += ''.join(fdata.splitlines(True)[2:])
+                    f.truncate(0)
+                    f.seek(0, 0)
+                    f.write(background_darker_code)
+        else:
+            pass
+
     def __getStyle(self, filename):
         cur_dir = os.path.dirname(__file__)
         sass_dirname = os.path.join(cur_dir, 'sass')
@@ -44,7 +62,7 @@ class QtSassTheme:
         css = qtsass.compile_filename(os.path.join(sass_dirname, filename), temp_file)
         return css
 
-    def getThemeFiles(self, theme: str = 'dark_gray', output_path=os.getcwd()):
+    def getThemeFiles(self, theme: str = 'dark_gray', background_darker=False, output_path=os.getcwd()):
         cur_dir = os.path.dirname(__file__)
         theme_prefix = theme.split('_')[0]
         ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_prefix))
@@ -69,6 +87,9 @@ class QtSassTheme:
 
         ico_filename = 'ico/_icons.scss'
         self.__setIconPath(ico_filename, output_dirname)
+
+        var_filename = 'var/_variables.scss'
+        self.__setVarPath(var_filename, background_darker)
 
     def setThemeFiles(self, main_window: QWidget, input_path='res', exclude_type_lst: list = []):
         if os.path.basename(os.getcwd()) != input_path:
