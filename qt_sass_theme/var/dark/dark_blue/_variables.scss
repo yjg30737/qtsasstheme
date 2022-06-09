@@ -1,5 +1,6 @@
 $bgcolor: #2c3949;
 $widgetcolor: darken($bgcolor, 10);
+$altwidgetcolor: lighten($widgetcolor, 18);
 $textcolor: #DDDDDD;
 $hovercolor: lighten($widgetcolor, 3);
 $bordercolor: lighten($widgetcolor, 20);
