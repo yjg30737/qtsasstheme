@@ -73,6 +73,7 @@ This is `_variables.scss`'s contents(dark-gray theme).
 ```scss
 $bgcolor: #444444;
 $widgetcolor: darken($bgcolor, 10);
+$altwidgetcolor: lighten($widgetcolor, 18);
 $textcolor: #DDDDDD;
 $hovercolor: lighten($widgetcolor, 3);
 $bordercolor: lighten($widgetcolor, 20);
