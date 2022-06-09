@@ -133,7 +133,7 @@ if __name__ == "__main__":
 ### Result
 Dark gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/172755215-e246ec18-f3b8-416c-9fc6-569f554181e3.png)
+![image](https://user-images.githubusercontent.com/55078043/172822686-69e920fd-edf5-4c65-92fa-9c2213af3d5c.png)
 
 Dark blue theme
 
