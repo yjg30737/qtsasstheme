@@ -28,7 +28,7 @@ setup(
                   'qt_sass_theme.ico.dark': ['_icons.scss', 'check.svg', 'close.svg'],
                   'qt_sass_theme.ico.light': ['_icons.scss', 'check.svg', 'close.svg']
                   },
-    description='Set the Qt theme (e.g. dark/light/darkblue/lightblue) easily',
+    description='Set the Qt theme (e.g. darkgray/lightgray/darkblue/lightblue) easily',
     url='https://github.com/yjg30737/qtsasstheme.git',
     long_description_content_type='text/markdown',
     long_description=long_description,
