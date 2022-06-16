@@ -81,7 +81,7 @@ open the `_variables.scss` and change the `$bgcolor`'s value.
 This is `_variables.scss`'s contents(dark-gray theme).
 
 ```scss
-$bgcolor: #444444;
+$bgcolor: #555555;
 $widgetcolor: darken($bgcolor, 10);
 $altwidgetcolor: lighten($widgetcolor, 18);
 $textcolor: #DDDDDD;
@@ -96,7 +96,7 @@ $splitterhandlecolor: darken($widgetcolor, 10);
 
 You can change any colors.
 
-In this example i will change the $bgcolor from #444444 to #006600(dark-green).
+In this example i will change the $bgcolor from #555555 to #006600(dark-green).
 
 3. Calling `setThemeFiles`
 ```python
