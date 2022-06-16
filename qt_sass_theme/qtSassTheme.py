@@ -71,8 +71,8 @@ class QtSassTheme:
             ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_prefix))
             var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_prefix), theme))
 
-        # check whether theme value is 6-digit hex color
         else:
+            # check whether theme value is 6-digit hex color
             m = re.match(r'#[a-fA-F0-9]{6}', theme)
             if m:
                 theme_color = m.group(0)
@@ -80,23 +80,23 @@ class QtSassTheme:
 
                 # 'if it is, check 6-digit hex color is lighter than usual or darker')
                 r, g, b = theme_base_color.red(), theme_base_color.green(), theme_base_color.blue()
-                theme_gray_level = ''
+                theme_lightness = ''
                 if qGray(r, g, b) > 255 // 2:
-                    theme_gray_level = 'light'
+                    theme_lightness = 'light'
                 else:
-                    theme_gray_level = 'dark'
+                    theme_lightness = 'dark'
 
                 # get the ico_dirname
-                ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_gray_level))
+                ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_lightness))
 
                 # get the dark_gray/light_gray theme
-                var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_gray_level), theme_gray_level+'_gray'))
+                var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_lightness),
+                                                                 theme_lightness+'_gray'))
 
                 print(theme_color)
-                print(theme_gray_level)
+                print(theme_lightness)
                 print(ico_dirname)
                 print(var_dirname)
-
 
         sass_dirname = os.path.join(cur_dir, 'sass')
         os.chdir(output_path)
