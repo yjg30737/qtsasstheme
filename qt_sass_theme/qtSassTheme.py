@@ -14,9 +14,9 @@ class QtSassTheme:
         cur_dir = os.path.dirname(__file__)
         ico_filename = os.path.join(cur_dir, 'ico/_icons.scss')
         icon_path = cur_dir.replace(os.path.sep, posixpath.sep)
-        self.__setIcoInDetail(ico_filename, icon_path)
+        self.__setIcoPath(ico_filename, icon_path)
 
-    def __setIcoInDetail(self, ico_filename: str, icon_path: str):
+    def __setIcoPath(self, ico_filename: str, icon_path: str):
         import_abspath_str = f'$icopath: \'{icon_path}/\';'
         with open(ico_filename, 'r+') as f:
             fdata = f.read()
@@ -36,7 +36,7 @@ class QtSassTheme:
                     f.seek(0, 0)
                     f.write(import_abspath_str + '\n' + fdata)
 
-    def __setVarInDetail(self, var_filename: str, background_darker=False):
+    def __setBackgroundPolicy(self, var_filename: str, background_darker=False):
         if background_darker:
              with open(var_filename, 'r+') as f:
                 fdata = f.read()
@@ -86,10 +86,10 @@ class QtSassTheme:
         shutil.copytree(var_dirname, 'var')
 
         ico_filename = 'ico/_icons.scss'
-        self.__setIcoInDetail(ico_filename, output_dirname)
+        self.__setIcoPath(ico_filename, output_dirname)
 
         var_filename = 'var/_variables.scss'
-        self.__setVarInDetail(var_filename, background_darker)
+        self.__setBackgroundPolicy(var_filename, background_darker)
 
     def setThemeFiles(self, main_window: QWidget, input_path='res', exclude_type_lst: list = []):
         if os.path.basename(os.getcwd()) != input_path:
