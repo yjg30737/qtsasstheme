@@ -72,30 +72,30 @@ class QtSassTheme:
             var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_prefix), theme))
 
         # check whether theme value is 6-digit hex color
-        ttt = '#FFFFFF'
-        m = re.match(r'#[a-fA-F0-9]{6}', ttt)
-        if m:
-            theme_color = m.group(0)
-            theme_base_color = QColor(theme_color)
+        else:
+            m = re.match(r'#[a-fA-F0-9]{6}', theme)
+            if m:
+                theme_color = m.group(0)
+                theme_base_color = QColor(theme_color)
 
-            # 'if it is, check 6-digit hex color is lighter than usual or darker')
-            r, g, b = theme_base_color.red(), theme_base_color.green(), theme_base_color.blue()
-            theme_gray_level = ''
-            if qGray(r, g, b) > 255 // 2:
-                theme_gray_level = 'light'
-            else:
-                theme_gray_level = 'dark'
+                # 'if it is, check 6-digit hex color is lighter than usual or darker')
+                r, g, b = theme_base_color.red(), theme_base_color.green(), theme_base_color.blue()
+                theme_gray_level = ''
+                if qGray(r, g, b) > 255 // 2:
+                    theme_gray_level = 'light'
+                else:
+                    theme_gray_level = 'dark'
 
-            # get the ico_dirname
-            ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_gray_level))
+                # get the ico_dirname
+                ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_gray_level))
 
-            # get the dark_gray/light_gray theme
-            var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_gray_level), theme_gray_level+'_gray'))
+                # get the dark_gray/light_gray theme
+                var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_gray_level), theme_gray_level+'_gray'))
 
-            print(theme_color)
-            print(theme_gray_level)
-            print(ico_dirname)
-            print(var_dirname)
+                print(theme_color)
+                print(theme_gray_level)
+                print(ico_dirname)
+                print(var_dirname)
 
 
         sass_dirname = os.path.join(cur_dir, 'sass')
