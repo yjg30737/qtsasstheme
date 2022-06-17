@@ -15,7 +15,7 @@ Old name of this is `qt-sass-theme-getter`.
 ## Detailed Description 
 ### Method Overview
 #### `getThemeFiles(theme: str = 'dark_gray', background_darker=False, output_path=os.getcwd())`
-Available value of theme argument:
+Currently there are 4 official theme being supported:
 * dark_gray
 * dark_blue
 * light_gray
@@ -60,7 +60,30 @@ Note: Don't change the current directory with function such as `os.chdir` after 
 
 ### Customizing Theme
 
-If you want to set customized theme, do it with changing the `_variables.scss`'s variables.
+There are two ways to customize theme.
+
+#### 1. Giving color string to `getThemeFiles`
+
+You can give the 6-digit hex string(e.g. #FF0000) to `getThemeFiles`'s `theme` argument.
+
+In this case, widget's color will be set based on the hex color you given.
+
+This is the way how to do it:
+
+```python
+//..
+app = QApplication(sys.argv)
+w = SampleWidget()
+g = QtSassTheme()
+g.getThemeFiles(theme='#6f495f')
+g.setThemeFiles(w)
+w.show()
+app.exec_()
+```
+
+![image](https://user-images.githubusercontent.com/55078043/174227644-e5cbea4c-bd5e-4887-b23c-be763815e409.png)
+
+#### 2. Modify `_variables.scss`'s color directly
 
 This is the way how to do it:
 
@@ -72,7 +95,7 @@ g.getThemeFiles()
 
 ![image](https://user-images.githubusercontent.com/55078043/172735025-7bf78c88-3f42-4bfc-8c00-726bdef764a5.png)
 
-'res' directory like above will be generated.
+'res' directory like above will be generated. You can see `_variables.scss`.
 
 2. Change the variables
 
@@ -100,9 +123,12 @@ In this example i will change the $bgcolor from #555555 to #006600(dark-green).
 
 3. Calling `setThemeFiles`
 ```python
+//..
 app = QApplication(sys.argv)
 w = SampleWidget()
+g = QtSassTheme()
 g.setThemeFiles(w)
+w.show()
 app.exec_()
 ```
 
