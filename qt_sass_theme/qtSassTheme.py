@@ -66,13 +66,14 @@ class QtSassTheme:
     def getThemeFiles(self, theme: str = 'dark_gray', background_darker=False, output_path=os.getcwd()):
         theme_lst = ['dark_gray', 'dark_blue', 'light_gray', 'light_blue']
         cur_dir = os.path.dirname(__file__)
-        if theme in theme_lst:
+        official_theme_flag = theme in theme_lst
+        if official_theme_flag:
             theme_prefix = theme.split('_')[0]
             ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_prefix))
             var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_prefix), theme))
 
+        # check whether theme value is 6-digit hex color
         else:
-            # check whether theme value is 6-digit hex color
             m = re.match(r'#[a-fA-F0-9]{6}', theme)
             if m:
                 theme_color = m.group(0)
