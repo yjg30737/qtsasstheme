@@ -37,6 +37,9 @@ class QtSassTheme:
                     f.seek(0, 0)
                     f.write(import_abspath_str + '\n' + fdata)
 
+    def __setCustomThemeColor(self, theme_color: str):
+        print(f'set {theme_color}')
+
     def __setBackgroundPolicy(self, var_filename: str, background_darker=False):
         if background_darker:
              with open(var_filename, 'r+') as f:
@@ -77,10 +80,10 @@ class QtSassTheme:
             m = re.match(r'#[a-fA-F0-9]{6}', theme)
             if m:
                 theme_color = m.group(0)
-                theme_base_color = QColor(theme_color)
+                theme_color = QColor(theme_color)
 
                 # 'if it is, check 6-digit hex color is lighter than usual or darker')
-                r, g, b = theme_base_color.red(), theme_base_color.green(), theme_base_color.blue()
+                r, g, b = theme_color.red(), theme_color.green(), theme_color.blue()
                 theme_lightness = ''
                 if qGray(r, g, b) > 255 // 2:
                     theme_lightness = 'light'
@@ -93,11 +96,6 @@ class QtSassTheme:
                 # get the dark_gray/light_gray theme
                 var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_lightness),
                                                                  theme_lightness+'_gray'))
-
-                print(theme_color)
-                print(theme_lightness)
-                print(ico_dirname)
-                print(var_dirname)
 
         sass_dirname = os.path.join(cur_dir, 'sass')
         os.chdir(output_path)
@@ -121,6 +119,10 @@ class QtSassTheme:
         self.__setIcoPath(ico_filename, output_dirname)
 
         var_filename = 'var/_variables.scss'
+        if official_theme_flag:
+            pass
+        else:
+            self.__setCustomThemeColor(theme)
         self.__setBackgroundPolicy(var_filename, background_darker)
 
     def setThemeFiles(self, main_window: QWidget, input_path='res', exclude_type_lst: list = []):
