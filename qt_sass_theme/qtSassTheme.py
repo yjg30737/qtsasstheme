@@ -96,6 +96,8 @@ class QtSassTheme:
                 # get the dark_gray/light_gray theme
                 var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_lightness),
                                                                  theme_lightness+'_gray'))
+            else:
+                raise Exception('Invalid theme')
 
         sass_dirname = os.path.join(cur_dir, 'sass')
         os.chdir(output_path)
