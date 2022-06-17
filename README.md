@@ -62,7 +62,7 @@ Note: Don't change the current directory with function such as `os.chdir` after 
 
 There are two ways to customize theme.
 
-#### 1. Giving color string to `getThemeFiles`
+#### 1. Giving color string to <a href="https://github.com/yjg30737/qtsasstheme#getthemefilestheme-str--dark_gray-background_darkerfalse-output_pathosgetcwd">`getThemeFiles`</a>
 
 You can give the 6-digit hex string(e.g. #FF0000) to `getThemeFiles`'s `theme` argument.
 
