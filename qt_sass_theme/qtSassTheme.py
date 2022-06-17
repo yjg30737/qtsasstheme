@@ -37,8 +37,15 @@ class QtSassTheme:
                     f.seek(0, 0)
                     f.write(import_abspath_str + '\n' + fdata)
 
-    def __setCustomThemeColor(self, theme_color: str):
-        print(f'set {theme_color}')
+    def __setCustomThemeColor(self, var_filename: str, theme_color: str):
+        with open(var_filename, 'r+') as f:
+            fdata = f.read()
+            m = re.search(r'\$bgcolor:(.+\n)', fdata)
+            if m:
+                custom_theme_code = f'$bgcolor: {theme_color};\n'
+                f.truncate(0)
+                f.seek(0, 0)
+                f.write(custom_theme_code + ''.join(fdata.splitlines(True)[1:]))
 
     def __setBackgroundPolicy(self, var_filename: str, background_darker=False):
         if background_darker:
@@ -124,7 +131,7 @@ class QtSassTheme:
         if official_theme_flag:
             pass
         else:
-            self.__setCustomThemeColor(theme)
+            self.__setCustomThemeColor(var_filename, theme)
         self.__setBackgroundPolicy(var_filename, background_darker)
 
     def setThemeFiles(self, main_window: QWidget, input_path='res', exclude_type_lst: list = []):
