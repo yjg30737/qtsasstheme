@@ -341,10 +341,27 @@ QGroupBox::title {
 QSpinBox {
     color: $textcolor;
     border: 1px solid $bordercolor;
-    border-radius: 5;
-    padding: 2;
-    background: transparent;
-    font-size: 14px;
+    background: $widgetcolor;
+    min-width: 20px;
+    padding: 2px;
+}
+
+QSpinBox::up-button {
+    image: url($up);
+    padding: 2px;
+}
+
+QSpinBox::up-button:hover {
+    background-color: $hovercolor;
+}
+
+QSpinBox::down-button {
+    image: url($down);
+    padding: 2px;
+}
+
+QSpinBox::down-button:hover {
+    background-color: $hovercolor;
 }
 
 QTimeEdit {
