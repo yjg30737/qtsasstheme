@@ -102,13 +102,16 @@ QTreeView::item:selected {
 }
 
 QScrollBar:horizontal {
-    background: transparent;
+    background: $altwidgetcolor;
+    margin: 0 16px 0 16px;
 }
 
 QScrollBar::handle:horizontal {
     background: $scrollhandlecolor;
+    min-width: 20px;
 }
 
+// modify later
 QScrollBar::add-line:horizontal {
     background: none;
 }
@@ -126,19 +129,31 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 }
 
 QScrollBar:vertical {
-    background: transparent;
+    background: $altwidgetcolor;
+    margin: 16px 0 16px 0;
 }
 
 QScrollBar::handle:vertical {
     background: $scrollhandlecolor;
+    min-height: 20px;
 }
 
 QScrollBar::add-line:vertical {
-    background: transparent;
+    background: $altwidgetcolor;
+    height: 12px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+    image: url($down);
+    padding: 2px;
 }
 
 QScrollBar::sub-line:vertical {
-    background: transparent;
+    background: $altwidgetcolor;
+    height: 12px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+    image: url($up);
+    padding: 2px;
 }
 
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
