@@ -52,7 +52,7 @@ Right after calling `getThemeFiles`, you can set the style with calling `setThem
 
 After calling it, 'res' directory looks like this:
 
-![image](https://user-images.githubusercontent.com/55078043/172270071-d49a246a-7efb-463b-b0f8-bb70179a75f6.png)
+![image](https://user-images.githubusercontent.com/55078043/174504820-b6262c1e-e1b8-4c56-8c98-1f8c93d87175.png)
 
 scss files successfully convert into css files.
 
