@@ -35,9 +35,9 @@ If that is set to `False`(which is set by default), background color is lighter 
 
 `output_path` is the path that 'res' directory will be made which is holding a bunch of theme files after you called `getThemeFiles`.
 
-'res' directory looks like this:
+'res' directory looks like below.
 
-![image](https://user-images.githubusercontent.com/55078043/172268659-860a5633-7b73-4848-92c4-b946b035b75a.png)
+![image](https://user-images.githubusercontent.com/55078043/174504918-43e66f7f-21cb-4555-a446-7a476b69d62e.png)
 
 `ico` directory holds icon files which will be being used in theme. For example, light icons will be being used in dark theme, dark icons will be being used in light theme. `_icons.scss` makes sass files in `sass` directory refer to icons in this directory.
 
@@ -93,7 +93,7 @@ g = QtSassTheme()
 g.getThemeFiles() 
 ```
 
-![image](https://user-images.githubusercontent.com/55078043/172735025-7bf78c88-3f42-4bfc-8c00-726bdef764a5.png)
+![image](https://user-images.githubusercontent.com/55078043/174504918-43e66f7f-21cb-4555-a446-7a476b69d62e.png)
 
 'res' directory like above will be generated. You can see `_variables.scss`.
 
