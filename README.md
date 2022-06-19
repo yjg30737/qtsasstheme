@@ -132,7 +132,7 @@ w.show()
 app.exec_()
 ```
 
-![image](https://user-images.githubusercontent.com/55078043/172736296-a78a32fa-1a1a-403a-a11c-1de29b372316.png)
+![image](https://user-images.githubusercontent.com/55078043/174505003-be9ebf7d-3838-4a68-9f73-df6208d0877f.png)
 
 
 ## Example
@@ -163,12 +163,12 @@ Dark gray theme
 
 Dark blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/172755432-c3d552a8-4d93-43b8-a5d6-fd0ed6ff7d2d.png)
+![image](https://user-images.githubusercontent.com/55078043/174505021-e0a03f10-ae51-4283-a6a7-e0bca34476a1.png)
 
 Light gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/172755465-be037efa-87df-4d38-b8e8-de9b47015fba.png)
+![image](https://user-images.githubusercontent.com/55078043/174505026-ee886783-a483-40d8-b1ce-e395de4a17f6.png)
 
 Light blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/172755492-519c485b-54b9-4d87-aede-b64986c2ae90.png)
+![image](https://user-images.githubusercontent.com/55078043/174505033-be1d9fe8-5d74-4cbf-ad42-8a7ffa6ffcbf.png)
