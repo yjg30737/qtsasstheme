@@ -111,13 +111,22 @@ QScrollBar::handle:horizontal {
     min-width: 20px;
 }
 
-// modify later
 QScrollBar::add-line:horizontal {
-    background: none;
+    background: $altwidgetcolor;
+    width: 12px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+    image: url($right);
+    padding: 2px;
 }
 
 QScrollBar::sub-line:horizontal {
-    background: transparent;
+    background: $altwidgetcolor;
+    width: 12px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+    image: url($left);
+    padding: 2px;
 }
 
 QScrollBar:left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
@@ -130,7 +139,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 
 QScrollBar:vertical {
     background: $altwidgetcolor;
-    margin: 16px 0 16px 0;
+    margin: 12px 0 12px 0;
 }
 
 QScrollBar::handle:vertical {
@@ -143,8 +152,6 @@ QScrollBar::add-line:vertical {
     height: 12px;
     subcontrol-position: bottom;
     subcontrol-origin: margin;
-    image: url($down);
-    padding: 2px;
 }
 
 QScrollBar::sub-line:vertical {
@@ -152,8 +159,18 @@ QScrollBar::sub-line:vertical {
     height: 12px;
     subcontrol-position: top;
     subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical {
     image: url($up);
-    padding: 2px;
+    width: 6px;
+    height: 6px;
+}
+
+QScrollBar::down-arrow:vertical {
+    image: url($down);
+    width: 6px;
+    height: 6px;
 }
 
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
