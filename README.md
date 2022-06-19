@@ -27,11 +27,11 @@ You can also make your own theme with [customizing theme](#customizing-theme).
 
 If that is set to `True`, background color is darker than general widget color. See image below.
 
-![image](https://user-images.githubusercontent.com/55078043/174045178-0bccbf7d-1141-4a6b-90b6-3ad9ee4e8281.png)
+![image](https://user-images.githubusercontent.com/55078043/174504700-64b16154-5e99-48bd-ac92-24a13f90db86.png)
 
 If that is set to `False`(which is set by default), background color is lighter than general widget color. See image below.
 
-![image](https://user-images.githubusercontent.com/55078043/174045272-7e92594f-abc0-44e4-b2ea-c0fb9d3f520c.png)
+![image](https://user-images.githubusercontent.com/55078043/174504676-7281bbc9-7abf-49ce-99c7-68cdb9c2badf.png)
 
 `output_path` is the path that 'res' directory will be made which is holding a bunch of theme files after you called `getThemeFiles`.
 
@@ -81,7 +81,7 @@ w.show()
 app.exec_()
 ```
 
-![image](https://user-images.githubusercontent.com/55078043/174227644-e5cbea4c-bd5e-4887-b23c-be763815e409.png)
+![image](https://user-images.githubusercontent.com/55078043/174504721-ae3f905c-831f-42c2-82a6-d2e966ec38a3.png)
 
 #### 2. Modify `_variables.scss`'s color directly
 
@@ -159,7 +159,7 @@ if __name__ == "__main__":
 ### Result
 Dark gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/174045367-a1f53224-9ca0-40f0-bfa0-c41c6f3956e9.png)
+![image](https://user-images.githubusercontent.com/55078043/174504676-7281bbc9-7abf-49ce-99c7-68cdb9c2badf.png)
 
 Dark blue theme
 
