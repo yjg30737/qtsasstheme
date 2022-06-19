@@ -348,6 +348,7 @@ QSpinBox {
 
 QSpinBox::up-button {
     image: url($up);
+    min-width: 12px;
     padding: 2px;
 }
 
@@ -355,13 +356,22 @@ QSpinBox::up-button:hover {
     background-color: $hovercolor;
 }
 
+QSpinBox::up-button:pressed {
+    background-color: $selectcolor;
+}
+
 QSpinBox::down-button {
     image: url($down);
+    min-width: 12px;
     padding: 2px;
 }
 
 QSpinBox::down-button:hover {
     background-color: $hovercolor;
+}
+
+QSpinBox::down-button:pressed {
+    background-color: $selectcolor;
 }
 
 QTimeEdit {
