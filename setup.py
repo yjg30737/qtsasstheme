@@ -24,9 +24,9 @@ setup(
                   'qt_sass_theme.var.dark.dark_blue': ['_variables.scss'],
                   'qt_sass_theme.var.light.light_gray': ['_variables.scss'],
                   'qt_sass_theme.var.light.light_blue': ['_variables.scss'],
-                  'qt_sass_theme.ico': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'up.svg'],
-                  'qt_sass_theme.ico.dark': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'up.svg'],
-                  'qt_sass_theme.ico.light': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'up.svg']
+                  'qt_sass_theme.ico': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg'],
+                  'qt_sass_theme.ico.dark': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg'],
+                  'qt_sass_theme.ico.light': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg']
                   },
     description='Set the Qt theme (e.g. darkgray/lightgray/darkblue/lightblue) easily',
     url='https://github.com/yjg30737/qtsasstheme.git',
