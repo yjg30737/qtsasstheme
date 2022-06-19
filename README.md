@@ -112,8 +112,8 @@ $hovercolor: lighten($widgetcolor, 6);
 $bordercolor: lighten($widgetcolor, 20);
 $selectcolor: darken($widgetcolor, 6);
 $disabledcolor: #AAAAAA;
-$textwidgetcolor: darken($widgetcolor, 15);
-$scrollhandlecolor: lighten($widgetcolor, 20);
+$textwidgetcolor: darken($widgetcolor, 12);
+$scrollhandlecolor: lighten($widgetcolor, 30);
 $splitterhandlecolor: darken($widgetcolor, 10);
 ```
 
