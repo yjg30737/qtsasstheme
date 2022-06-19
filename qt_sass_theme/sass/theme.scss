@@ -103,7 +103,7 @@ QTreeView::item:selected {
 
 QScrollBar:horizontal {
     background: $altwidgetcolor;
-    margin: 0 16px 0 16px;
+    margin: 0 12px 0 12px;
 }
 
 QScrollBar::handle:horizontal {
@@ -114,23 +114,27 @@ QScrollBar::handle:horizontal {
 QScrollBar::add-line:horizontal {
     background: $altwidgetcolor;
     width: 12px;
-    subcontrol-position: right;
+    subcontrol-position: left;
     subcontrol-origin: margin;
-    image: url($right);
-    padding: 2px;
 }
 
 QScrollBar::sub-line:horizontal {
     background: $altwidgetcolor;
     width: 12px;
-    subcontrol-position: left;
+    subcontrol-position: right;
     subcontrol-origin: margin;
-    image: url($left);
-    padding: 2px;
 }
 
-QScrollBar:left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
-    background: transparent;
+QScrollBar:left-arrow:horizontal {
+    image: url($left);
+    width: 6px;
+    height: 6px;
+}
+
+QScrollBar::right-arrow:horizontal {
+    image: url($right);
+    width: 6px;
+    height: 6px;
 }
 
 QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
