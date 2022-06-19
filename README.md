@@ -27,17 +27,17 @@ You can also make your own theme with [customizing theme](#customizing-theme).
 
 If that is set to `True`, background color is darker than general widget color. See image below.
 
-![image](https://user-images.githubusercontent.com/55078043/174045178-0bccbf7d-1141-4a6b-90b6-3ad9ee4e8281.png)
+![image](https://user-images.githubusercontent.com/55078043/174504700-64b16154-5e99-48bd-ac92-24a13f90db86.png)
 
 If that is set to `False`(which is set by default), background color is lighter than general widget color. See image below.
 
-![image](https://user-images.githubusercontent.com/55078043/174045272-7e92594f-abc0-44e4-b2ea-c0fb9d3f520c.png)
+![image](https://user-images.githubusercontent.com/55078043/174504676-7281bbc9-7abf-49ce-99c7-68cdb9c2badf.png)
 
 `output_path` is the path that 'res' directory will be made which is holding a bunch of theme files after you called `getThemeFiles`.
 
-'res' directory looks like this:
+'res' directory looks like below.
 
-![image](https://user-images.githubusercontent.com/55078043/172268659-860a5633-7b73-4848-92c4-b946b035b75a.png)
+![image](https://user-images.githubusercontent.com/55078043/174504918-43e66f7f-21cb-4555-a446-7a476b69d62e.png)
 
 `ico` directory holds icon files which will be being used in theme. For example, light icons will be being used in dark theme, dark icons will be being used in light theme. `_icons.scss` makes sass files in `sass` directory refer to icons in this directory.
 
@@ -52,7 +52,7 @@ Right after calling `getThemeFiles`, you can set the style with calling `setThem
 
 After calling it, 'res' directory looks like this:
 
-![image](https://user-images.githubusercontent.com/55078043/172270071-d49a246a-7efb-463b-b0f8-bb70179a75f6.png)
+![image](https://user-images.githubusercontent.com/55078043/174504820-b6262c1e-e1b8-4c56-8c98-1f8c93d87175.png)
 
 scss files successfully convert into css files.
 
@@ -81,7 +81,7 @@ w.show()
 app.exec_()
 ```
 
-![image](https://user-images.githubusercontent.com/55078043/174227644-e5cbea4c-bd5e-4887-b23c-be763815e409.png)
+![image](https://user-images.githubusercontent.com/55078043/174504721-ae3f905c-831f-42c2-82a6-d2e966ec38a3.png)
 
 #### 2. Modify `_variables.scss`'s color directly
 
@@ -93,7 +93,7 @@ g = QtSassTheme()
 g.getThemeFiles() 
 ```
 
-![image](https://user-images.githubusercontent.com/55078043/172735025-7bf78c88-3f42-4bfc-8c00-726bdef764a5.png)
+![image](https://user-images.githubusercontent.com/55078043/174504918-43e66f7f-21cb-4555-a446-7a476b69d62e.png)
 
 'res' directory like above will be generated. You can see `_variables.scss`.
 
@@ -112,8 +112,8 @@ $hovercolor: lighten($widgetcolor, 6);
 $bordercolor: lighten($widgetcolor, 20);
 $selectcolor: darken($widgetcolor, 6);
 $disabledcolor: #AAAAAA;
-$textwidgetcolor: darken($widgetcolor, 15);
-$scrollhandlecolor: lighten($widgetcolor, 20);
+$textwidgetcolor: darken($widgetcolor, 12);
+$scrollhandlecolor: lighten($widgetcolor, 30);
 $splitterhandlecolor: darken($widgetcolor, 10);
 ```
 
@@ -132,7 +132,7 @@ w.show()
 app.exec_()
 ```
 
-![image](https://user-images.githubusercontent.com/55078043/172736296-a78a32fa-1a1a-403a-a11c-1de29b372316.png)
+![image](https://user-images.githubusercontent.com/55078043/174505003-be9ebf7d-3838-4a68-9f73-df6208d0877f.png)
 
 
 ## Example
@@ -159,16 +159,16 @@ if __name__ == "__main__":
 ### Result
 Dark gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/174045367-a1f53224-9ca0-40f0-bfa0-c41c6f3956e9.png)
+![image](https://user-images.githubusercontent.com/55078043/174504676-7281bbc9-7abf-49ce-99c7-68cdb9c2badf.png)
 
 Dark blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/172755432-c3d552a8-4d93-43b8-a5d6-fd0ed6ff7d2d.png)
+![image](https://user-images.githubusercontent.com/55078043/174505021-e0a03f10-ae51-4283-a6a7-e0bca34476a1.png)
 
 Light gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/172755465-be037efa-87df-4d38-b8e8-de9b47015fba.png)
+![image](https://user-images.githubusercontent.com/55078043/174505026-ee886783-a483-40d8-b1ce-e395de4a17f6.png)
 
 Light blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/172755492-519c485b-54b9-4d87-aede-b64986c2ae90.png)
+![image](https://user-images.githubusercontent.com/55078043/174505033-be1d9fe8-5d74-4cbf-ad42-8a7ffa6ffcbf.png)
