@@ -282,12 +282,16 @@ QTabBar::tab:!selected:hover {
 
 QTabBar::close-button {
      image: url($close);
+     border-radius: 8;
      padding: 3;
 }
 
 QTabBar::close-button:hover {
      background-color: $hovercolor;
-     border-radius: 8;
+}
+
+QTabBar::close-button:pressed {
+     background-color: $selectcolor;
 }
 
 QMenu {
