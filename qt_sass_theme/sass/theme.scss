@@ -301,7 +301,7 @@ QMenu {
 }
 
 QMenu::item {
-    padding: 3px 20px;
+    padding: 9px 30px;
     background-color: $widgetcolor;
     color: $textcolor;
 }
@@ -321,7 +321,7 @@ QMenu::separator {
 
 QMenu::indicator {
     padding-right: -14;
-    padding-left: 2;
+    padding-left: 8;
     width: 12;
 }
 
