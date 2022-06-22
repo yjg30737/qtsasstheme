@@ -1,6 +1,7 @@
 @import "../var/variables";
 @import "../ico/icons";
 
+// todo every padding/margin should be set accompanied with font/scale size
 QMainWindow {
     background-color: $bgcolor;
 }
@@ -328,11 +329,12 @@ QMenu::indicator:non-exclusive:checked {
     image: url($check);
 }
 
+// group box type 1
 QGroupBox {
     border: 1px solid $bordercolor;
     border-radius: 5px;
     padding: 5px;
-    margin-top: 7px;
+    margin-top: 12px;
 }
 
 QGroupBox::title {
@@ -341,6 +343,21 @@ QGroupBox::title {
     subcontrol-position: top center;
     padding: 0 3px;
 }
+
+// group box type 2. group box which title be separated from the box
+/*
+QGroupBox {
+    border: 1px solid $bordercolor;
+    padding: 8px;
+    margin-top: 40px;
+}
+
+QGroupBox::title {
+    color: $textcolor;
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+}
+*/
 
 QSpinBox {
     color: $textcolor;
