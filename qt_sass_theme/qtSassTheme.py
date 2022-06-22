@@ -1,5 +1,5 @@
-from PyQt5.QtGui import QColor, qGray
-from PyQt5.QtWidgets import QWidget, QMainWindow, QDialog, QAbstractButton
+from PyQt5.QtGui import QColor, QFont, qGray
+from PyQt5.QtWidgets import QWidget, QMainWindow, QDialog, QAbstractButton, qApp
 from pyqt_svg_button import SvgButton
 
 import os, tempfile, posixpath, re
@@ -205,6 +205,23 @@ class QtSassTheme:
             if isinstance(main_window, QMainWindow):
                 menu_bar = main_window.menuBar()  # menu bar
                 menu_bar.setStyleSheet(menu_bar_style)
+
+        # modrenize the font
+        def modernizeAppFont():
+            # modernize the font
+            appFont = qApp.font()
+            # font family: arial
+            appFont.setFamily('Arial')
+            # font size: 9~12
+            appFont.setPointSize(min(12, max(9, appFont.pointSize() * qApp.desktop().logicalDpiX() / 96.0)))
+            # font style strategy: antialiasing
+            appFont.setStyleStrategy(QFont.PreferAntialias)
+            qApp.setFont(appFont)
+            # fade menu and tooltip
+            qApp.setEffectEnabled(Qt.UI_FadeMenu, True)
+            qApp.setEffectEnabled(Qt.UI_FadeTooltip, True)
+
+        modernizeAppFont()
 
     def getThemeStyle(self):
         css = self.__getStyle('theme.scss')
