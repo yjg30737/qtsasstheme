@@ -1,4 +1,5 @@
 from PyQt5.QtGui import QColor, QFont, qGray
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QMainWindow, QDialog, QAbstractButton, qApp
 from pyqt_svg_button import SvgButton
 
