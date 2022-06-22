@@ -320,13 +320,19 @@ QMenu::separator {
 }
 
 QMenu::indicator {
-    padding-right: -14;
-    padding-left: 8;
+    padding-right: -20;
+    padding-left: 6;
     width: 12;
 }
 
 QMenu::indicator:non-exclusive:checked {
     image: url($check);
+}
+
+QMenu::right-arrow {
+    padding-right: 20;
+    padding-left: -6;
+    width: 12;
 }
 
 // group box type 1
