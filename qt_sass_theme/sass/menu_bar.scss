@@ -6,10 +6,6 @@ QMenuBar
     color: $textcolor; 
 }
 
-QMenuBar::item {
-    padding: 6px 8px;
-}
-
 QMenuBar::item:selected { /* when selected using mouse or keyboard */
     background: $hovercolor;
 }
