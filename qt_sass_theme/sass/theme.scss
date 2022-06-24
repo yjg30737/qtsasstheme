@@ -201,16 +201,27 @@ QToolBar::separator {
 }
 
 QComboBox {
-    background: transparent;
-    selection-background-color: transparent;
-    selection-color: $selectcolor;
     color: $textcolor;
+    background-color: $widgetcolor;
+    selection-background-color: $selectcolor;
+    padding: 1px 18px 1px 3px;
+    border: $bordercolor;
+    border-radius: 3px;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: url($down);
+    width: 6px;
+    height: 6px;
 }
 
 QComboBox QAbstractItemView {
-    border: 1px solid $bordercolor;
-    background: $widgetcolor;
-    selection-background-color: $bgcolor;
+    selection-background-color: $selectcolor;
+    color: $textcolor;
 }
 
 QSplitter {
