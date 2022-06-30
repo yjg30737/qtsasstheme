@@ -28,11 +28,11 @@ You can also make your own theme with [customizing theme](#customizing-theme).
 
 If that is set to `True`, background color is darker than general widget color. See image below.
 
-![image](https://user-images.githubusercontent.com/55078043/174504700-64b16154-5e99-48bd-ac92-24a13f90db86.png)
+![image](https://user-images.githubusercontent.com/55078043/176577420-83dbb591-a007-43a8-9228-d901d087f3b9.png)
 
 If that is set to `False`(which is set by default), background color is lighter than general widget color. See image below.
 
-![image](https://user-images.githubusercontent.com/55078043/174504676-7281bbc9-7abf-49ce-99c7-68cdb9c2badf.png)
+![image](https://user-images.githubusercontent.com/55078043/176577358-4da71649-63e7-4a67-a041-49b381cf320c.png)
 
 `output_path` is the path that 'res' directory will be made which is holding a bunch of theme files after you called `getThemeFiles`.
 
@@ -79,10 +79,10 @@ g = QtSassTheme()
 g.getThemeFiles(theme='#6f495f')
 g.setThemeFiles(w)
 w.show()
-app.exec_()
+app.exec()
 ```
 
-![image](https://user-images.githubusercontent.com/55078043/174504721-ae3f905c-831f-42c2-82a6-d2e966ec38a3.png)
+![image](https://user-images.githubusercontent.com/55078043/176577019-40067d89-16ea-499b-961e-ca2a750a76f1.png)
 
 #### 2. Modify `_variables.scss`'s color directly
 
@@ -130,17 +130,19 @@ w = SampleWidget()
 g = QtSassTheme()
 g.setThemeFiles(w)
 w.show()
-app.exec_()
+app.exec()
 ```
 
-![image](https://user-images.githubusercontent.com/55078043/174505003-be9ebf7d-3838-4a68-9f73-df6208d0877f.png)
-
+![image](https://user-images.githubusercontent.com/55078043/176577665-061ecd5f-5044-4d5f-9419-5e22da1c57dc.png)
 
 ## Example
 ### Code Sample
 
 ```python
 from PyQt5.QtWidgets import QApplication
+# from PyQt6.QtWidgets import QApplication
+# from PySide2.QtWidgets import QApplication
+# from PySide6.QtWidgets import QApplication
 from pyqt_timer.settingsDialog import SettingsDialog
 from qt_sass_theme import QtSassTheme
 
@@ -154,22 +156,24 @@ if __name__ == "__main__":
     # g.getThemeFiles(theme='dark_blue') - if you want to set dark blue theme
     g.setThemeFiles(main_window=widget)
     widget.show()
-    app.exec_()
+    app.exec()
 ```
 
 ### Result
+Preview widget is <a href="https://github.com/yjg30737/pyqt-timer.git">pyqt-timer</a>'s settings dialog.
+
 Dark gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/174504676-7281bbc9-7abf-49ce-99c7-68cdb9c2badf.png)
+![image](https://user-images.githubusercontent.com/55078043/176577358-4da71649-63e7-4a67-a041-49b381cf320c.png)
 
 Dark blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/174505021-e0a03f10-ae51-4283-a6a7-e0bca34476a1.png)
+![image](https://user-images.githubusercontent.com/55078043/176577732-a3fe1575-73ad-44a4-8219-df196b954a7e.png)
 
 Light gray theme
 
-![image](https://user-images.githubusercontent.com/55078043/174505026-ee886783-a483-40d8-b1ce-e395de4a17f6.png)
+![image](https://user-images.githubusercontent.com/55078043/176577755-4534f3c1-9e35-48b1-8b9f-3fc770dac528.png)
 
 Light blue theme
 
-![image](https://user-images.githubusercontent.com/55078043/174505033-be1d9fe8-5d74-4cbf-ad42-8a7ffa6ffcbf.png)
+![image](https://user-images.githubusercontent.com/55078043/176577792-d47ce959-bd07-4ff4-9cf9-b309ab061d0b.png)
