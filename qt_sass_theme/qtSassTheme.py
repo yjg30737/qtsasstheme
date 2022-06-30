@@ -1,6 +1,6 @@
-from PyQt5.QtGui import QColor, QFont, qGray
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QMainWindow, QDialog, QAbstractButton, qApp
+from qtpy.QtGui import QColor, QFont, qGray, QGuiApplication
+from qtpy.QtCore import Qt, QCoreApplication
+from qtpy.QtWidgets import QWidget, QMainWindow, QDialog, QAbstractButton, QApplication
 from pyqt_svg_button import SvgButton
 
 import os, tempfile, posixpath, re
@@ -17,6 +17,12 @@ class QtSassTheme:
         ico_filename = os.path.join(cur_dir, 'ico/_icons.scss')
         icon_path = cur_dir.replace(os.path.sep, posixpath.sep)
         self.__setIcoPath(ico_filename, icon_path)
+        self.__prepareFineLookingGUI()
+
+    def __prepareFineLookingGUI(self):
+        QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+        QCoreApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)  # HighDPI support
+        QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 
     def __setIcoPath(self, ico_filename: str, icon_path: str):
         import_abspath_str = f'$icopath: \'{icon_path}/\';'
@@ -207,22 +213,24 @@ class QtSassTheme:
                 menu_bar = main_window.menuBar()  # menu bar
                 menu_bar.setStyleSheet(menu_bar_style)
 
-        # modrenize the font
-        def modernizeAppFont():
-            # modernize the font
-            appFont = qApp.font()
-            # font family: arial
-            appFont.setFamily('Arial')
-            # font size: 9~12
-            appFont.setPointSize(min(12, max(9, appFont.pointSize() * qApp.desktop().logicalDpiX() / 96.0)))
-            # font style strategy: antialiasing
-            appFont.setStyleStrategy(QFont.PreferAntialias)
-            qApp.setFont(appFont)
-            # fade menu and tooltip
-            qApp.setEffectEnabled(Qt.UI_FadeMenu, True)
-            qApp.setEffectEnabled(Qt.UI_FadeTooltip, True)
+        # modrenize the font - for pyqt5/pyside2
+        if os.environ['QT_API'] == 'pyqt5' or os.environ['QT_API'] == 'pyside2':
+            def modernizeAppFont():
+                from qtpy.QtWidgets import qApp
+                # modernize the font
+                appFont = qApp.font()
+                # font family: arial
+                appFont.setFamily('Arial')
+                # font size: 9~12
+                appFont.setPointSize(min(12, max(9, appFont.pointSize() * qApp.desktop().logicalDpiX() / 96.0)))
+                # font style strategy: antialiasing
+                appFont.setStyleStrategy(QFont.PreferAntialias)
+                qApp.setFont(appFont)
+                # fade menu and tooltip
+                qApp.setEffectEnabled(Qt.UI_FadeMenu, True)
+                qApp.setEffectEnabled(Qt.UI_FadeTooltip, True)
 
-        modernizeAppFont()
+            modernizeAppFont()
 
     def getThemeStyle(self):
         css = self.__getStyle('theme.scss')
