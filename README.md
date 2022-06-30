@@ -9,6 +9,7 @@ Old name of this is `qt-sass-theme-getter`.
 `python -m pip install qtsasstheme`
 
 ## Included Packages
+* <a href="https://github.com/spyder-ide/qtpy">qtpy</a> - support pyqt5/pyside2/pyqt6/pyside6
 * <a href="https://github.com/spyder-ide/qtsass">qtsass</a> - for converting sass into css
 * <a href="https://github.com/yjg30737/pyqt-svg-button">pyqt-svg-button</a> - for supporting svg button
 
