@@ -1,9 +1,10 @@
 @import "../var/variables";
 
+
 QPushButton, QToolButton
 {
 	border-width:1px;
-	border-radius: 10px;
+	border-radius: 0.5em;
     border-style: solid;
 	border-color: $bordercolor;
 	min-width: 5em;
