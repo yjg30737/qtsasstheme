@@ -1,6 +1,10 @@
 @import "../var/variables";
 @import "../ico/icons";
 
+* {
+    font-size: $fontsize
+}
+
 // todo every padding/margin should be set accompanied with font/scale size
 QMainWindow {
     background-color: $bgcolor;
@@ -448,4 +452,8 @@ QToolTip {
     border: 1px solid $bordercolor;
     background-color: $widgetcolor;
     color: $textcolor;
+}
+
+QStatusBar {
+    color: $textcolor
 }
