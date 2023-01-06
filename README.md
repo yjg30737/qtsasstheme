@@ -15,7 +15,7 @@ Old name of this is `qt-sass-theme-getter`.
 
 ## Detailed Description 
 ### Method Overview
-#### `getThemeFiles(theme: str = 'dark_gray', background_darker=False, output_path=os.getcwd())`
+#### `getThemeFiles(theme: str = 'dark_gray', font_size=9, background_darker=False, output_path=os.getcwd())`
 Currently there are 4 official theme being supported:
 * dark_gray
 * dark_blue
