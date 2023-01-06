@@ -3,7 +3,8 @@
 QMenuBar 
 { 
     background-color: $widgetcolor;
-    color: $textcolor; 
+    color: $textcolor;
+//     height: calc($fontsize);
 }
 
 QMenuBar::item {

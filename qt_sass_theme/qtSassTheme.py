@@ -72,6 +72,25 @@ class QtSassTheme:
         else:
             pass
 
+    def __setFontSize(self, var_filename, font_size):
+        with open(var_filename, 'r') as f:
+            lines = f.readlines()
+
+        new_line_for_font_size = f'$fontsize: {font_size}pt;'
+
+        idx_to_replace = 0
+
+        for i, line in enumerate(lines):
+            if 'fontsize' in line:
+                idx_to_replace = i
+                break
+
+        lines[idx_to_replace] = new_line_for_font_size
+
+        with open(var_filename, 'w') as f:
+            f.writelines(lines)
+
+
     def __getStyle(self, filename):
         cur_dir = os.path.dirname(__file__)
         sass_dirname = os.path.join(cur_dir, 'sass')
@@ -80,7 +99,7 @@ class QtSassTheme:
         css = qtsass.compile_filename(os.path.join(sass_dirname, filename), temp_file)
         return css
 
-    def getThemeFiles(self, theme: str = 'dark_gray', background_darker=False, output_path=os.getcwd()):
+    def getThemeFiles(self, theme: str = 'dark_gray', font_size=9, background_darker=False, output_path=os.getcwd()):
         theme_lst = ['dark_gray', 'dark_blue', 'light_gray', 'light_blue']
         cur_dir = os.path.dirname(__file__)
         official_theme_flag = theme in theme_lst
@@ -140,6 +159,7 @@ class QtSassTheme:
         else:
             self.__setCustomThemeColor(var_filename, theme)
         self.__setBackgroundPolicy(var_filename, background_darker)
+        self.__setFontSize(var_filename, font_size)
 
     def setThemeFiles(self, main_window: QWidget, input_path='res', exclude_type_lst: list = []):
         if os.path.basename(os.getcwd()) != input_path:
