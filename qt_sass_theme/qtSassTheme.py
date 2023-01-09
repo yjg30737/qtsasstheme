@@ -73,7 +73,8 @@ class QtSassTheme:
             pass
 
     def __setFontSize(self, var_filename, font_size):
-        QApplication.setFont(QFont('Arial', font_size))
+        family_name = QApplication.font().family()
+        QApplication.setFont(QFont(family_name, font_size))
         # with open(var_filename, 'r') as f:
         #     lines = f.readlines()
         #
