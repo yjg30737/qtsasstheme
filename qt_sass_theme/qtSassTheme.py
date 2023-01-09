@@ -73,8 +73,13 @@ class QtSassTheme:
             pass
 
     def __setFontSize(self, var_filename, font_size):
+        font = QApplication.font()
         family_name = QApplication.font().family()
-        QApplication.setFont(QFont(family_name, font_size))
+        font.setFamily(family_name)
+        font.setPointSize(font_size)
+        font.setStyleStrategy(QFont.PreferAntialias)
+        QApplication.setFont(font)
+
         # with open(var_filename, 'r') as f:
         #     lines = f.readlines()
         #
@@ -163,6 +168,10 @@ class QtSassTheme:
         self.__setBackgroundPolicy(var_filename, background_darker)
         self.__setFontSize(var_filename, font_size)
 
+        # fade menu and tooltip
+        QApplication.setEffectEnabled(Qt.UI_FadeMenu, True)
+        QApplication.setEffectEnabled(Qt.UI_FadeTooltip, True)
+
     def setThemeFiles(self, main_window: QWidget, input_path='res', exclude_type_lst: list = []):
         if os.path.basename(os.getcwd()) != input_path:
             input_path = os.path.join(os.getcwd(), input_path)
@@ -234,25 +243,6 @@ class QtSassTheme:
             if isinstance(main_window, QMainWindow):
                 menu_bar = main_window.menuBar()  # menu bar
                 menu_bar.setStyleSheet(menu_bar_style)
-
-        # modrenize the font - for pyqt5/pyside2
-        if os.environ['QT_API'] == 'pyqt5' or os.environ['QT_API'] == 'pyside2':
-            def modernizeAppFont():
-                from qtpy.QtWidgets import qApp
-                # modernize the font
-                appFont = qApp.font()
-                # font family: arial
-                appFont.setFamily('Arial')
-                # font size: 9~12
-                appFont.setPointSize(min(12, max(9, appFont.pointSize() * qApp.desktop().logicalDpiX() / 96.0)))
-                # font style strategy: antialiasing
-                appFont.setStyleStrategy(QFont.PreferAntialias)
-                qApp.setFont(appFont)
-                # fade menu and tooltip
-                qApp.setEffectEnabled(Qt.UI_FadeMenu, True)
-                qApp.setEffectEnabled(Qt.UI_FadeTooltip, True)
-
-            modernizeAppFont()
 
     def getThemeStyle(self):
         css = self.__getStyle('theme.scss')
