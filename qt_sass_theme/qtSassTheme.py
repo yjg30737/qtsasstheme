@@ -14,8 +14,8 @@ class QtSassTheme:
     def __init__(self):
         # set the icons
         cur_dir = os.path.dirname(__file__)
-        ico_filename = os.path.join(cur_dir, 'ico/_icons.scss')
         icon_path = cur_dir.replace(os.path.sep, posixpath.sep)
+        ico_filename = os.path.join(icon_path, 'ico/_icons.scss').replace(os.path.sep, posixpath.sep)
         self.__setIcoPath(ico_filename, icon_path)
         self.__prepareFineLookingGUI()
 
