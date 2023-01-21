@@ -312,38 +312,49 @@ QMenu {
 }
 
 QMenu::item {
-    padding: 9px 30px;
-    background-color: $widgetcolor;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-right: 25px;
     color: $textcolor;
+    margin: 3px;
 }
 
 QMenu::item:selected {
-    background-color: $selectcolor;
-}
-
-QMenu::item:disabled {
-    color: $disabledcolor;
+    background: $selectcolor;
 }
 
 QMenu::separator {
+    height: 2px;
     background-color: $bordercolor;
-    height: 1px;
 }
 
 QMenu::indicator {
-    padding-right: -20;
-    padding-left: 6;
-    width: 12;
+    padding-left: 3px;
+    width: 18px;
+    height: 18px;
 }
 
 QMenu::indicator:non-exclusive:checked {
     image: url($check);
 }
 
+QMenu::indicator:non-exclusive:unchecked {
+    image: none;
+}
+
+QMenu::indicator:exclusive:checked {
+    image: url($circle-solid);
+}
+
+QMenu::indicator:exclusive:unchecked {
+    image: none;
+}
+
 QMenu::right-arrow {
-    padding-right: 20;
-    padding-left: -6;
-    width: 12;
+    padding-right: 20px;
+    padding-left: -6px;
+    width: 12px;
 }
 
 // group box type 1
