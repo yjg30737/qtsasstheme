@@ -331,8 +331,8 @@ QMenu::separator {
 
 QMenu::indicator {
     padding-left: 3px;
-    width: 18px;
-    height: 18px;
+    width: 0.5em;
+    height: 0.5em;
 }
 
 QMenu::indicator:non-exclusive:checked {
