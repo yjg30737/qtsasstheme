@@ -53,7 +53,7 @@ If that is set to `False`(which is set by default), background color is lighter 
 
 <hr>
 
-#### `setThemeFiles(main_window: QWidget, input_path='res', exclude_type_lst: list = [])`
+#### `setThemeFiles(main_window: QWidget, input_path='res')`
 Right after calling `getThemeFiles`, you can set the style with calling `setThemeFiles`.
 
 After calling it, 'res' directory looks like this:
