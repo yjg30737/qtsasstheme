@@ -14,6 +14,7 @@ setup(
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
+    # package_data = {package_name: ['*.scss'] for package_name in find_packages()},
     package_data={'qt_sass_theme.sass': ['theme.scss',
                                          'icon_button.scss',
                                          'icon_text_button.scss',
@@ -35,6 +36,5 @@ setup(
     install_requires=[
         'qtpy',
         'qtsass',
-        'pyqt-svg-button>=0.0.1'
     ]
 )

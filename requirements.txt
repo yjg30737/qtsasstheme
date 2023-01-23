@@ -1,3 +1,2 @@
 qtpy
 qtsass
-pyqt-svg-button>=0.0.1

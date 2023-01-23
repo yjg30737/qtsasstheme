@@ -1,7 +1,6 @@
 from qtpy.QtGui import QColor, QFont, qGray, QGuiApplication
 from qtpy.QtCore import Qt, QCoreApplication
 from qtpy.QtWidgets import QWidget, QMainWindow, QDialog, QAbstractButton, QApplication
-from pyqt_svg_button import SvgButton
 
 import os, tempfile, posixpath, re
 import shutil
@@ -72,30 +71,13 @@ class QtSassTheme:
         else:
             pass
 
-    def __setFontSize(self, var_filename, font_size):
+    def __setFontSize(self, font_size):
         font = QApplication.font()
         family_name = QApplication.font().family()
         font.setFamily(family_name)
         font.setPointSize(font_size)
         font.setStyleStrategy(QFont.PreferAntialias)
         QApplication.setFont(font)
-
-        # with open(var_filename, 'r') as f:
-        #     lines = f.readlines()
-        #
-        # new_line_for_font_size = f'$fontsize: {font_size}pt;'
-        #
-        # idx_to_replace = 0
-        #
-        # for i, line in enumerate(lines):
-        #     if 'fontsize' in line:
-        #         idx_to_replace = i
-        #         break
-        #
-        # lines[idx_to_replace] = new_line_for_font_size
-        #
-        # with open(var_filename, 'w') as f:
-        #     f.writelines(lines)
 
 
     def __getStyle(self, filename):
@@ -166,13 +148,13 @@ class QtSassTheme:
         else:
             self.__setCustomThemeColor(var_filename, theme)
         self.__setBackgroundPolicy(var_filename, background_darker)
-        self.__setFontSize(var_filename, font_size)
+        self.__setFontSize(font_size)
 
         # fade menu and tooltip
         QApplication.setEffectEnabled(Qt.UI_FadeMenu, True)
         QApplication.setEffectEnabled(Qt.UI_FadeTooltip, True)
 
-    def setThemeFiles(self, main_window: QWidget, input_path='res', exclude_type_lst: list = []):
+    def setThemeFiles(self, main_window: QWidget, input_path='res'):
         if os.path.basename(os.getcwd()) != input_path:
             input_path = os.path.join(os.getcwd(), input_path)
             os.chdir(input_path)
@@ -215,30 +197,11 @@ class QtSassTheme:
                 for btn in btns:
                     # check if text exists
                     if btn.text().strip() == '':
-                        # if button type is SvgButton, let it keep its own style
-                        if isinstance(btn, SvgButton):
-                            pass
-                        else:
-                            btn.setStyleSheet(icon_button_style)  # no text - icon button style
+                        btn.setStyleSheet(icon_button_style)  # no text - icon button style
                     else:
-                        # if button type is SvgButton, let it maintain its own style
-                        if isinstance(btn, SvgButton):
-                            pass
-                        else:
-                            btn.setStyleSheet(icon_text_button_style)  # text - icon-text button style
+                        btn.setStyleSheet(icon_text_button_style)  # text - icon-text button style
 
-            # check exclusion of QAbstractButton
-            if QAbstractButton in exclude_type_lst:
-                pass
-            else:
-                setButtonStyle(main_window)
-
-            # todo check exclusion of other types
-            if len(exclude_type_lst) > 0:
-                for _type in exclude_type_lst:
-                    widgets = main_window.findChildren(_type)
-                    if isinstance(_type, QAbstractButton):
-                        print(_type)
+            setButtonStyle(main_window)
 
             if isinstance(main_window, QMainWindow):
                 menu_bar = main_window.menuBar()  # menu bar
