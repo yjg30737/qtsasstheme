@@ -7,6 +7,10 @@ import shutil
 
 import qtsass
 
+# Set attribute Qt::AA_EnableHighDpiScaling before QCoreApplication is created
+QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+QCoreApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)  # HighDPI support
+QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 
 class QtSassTheme:
 
@@ -16,12 +20,6 @@ class QtSassTheme:
         icon_path = cur_dir.replace(os.path.sep, posixpath.sep)
         ico_filename = os.path.join(icon_path, 'ico/_icons.scss').replace(os.path.sep, posixpath.sep)
         self.__setIcoPath(ico_filename, icon_path)
-        self.__prepareFineLookingGUI()
-
-    def __prepareFineLookingGUI(self):
-        QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-        QCoreApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)  # HighDPI support
-        QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 
     def __setIcoPath(self, ico_filename: str, icon_path: str):
         import_abspath_str = f'$icopath: \'{icon_path}/\';'
