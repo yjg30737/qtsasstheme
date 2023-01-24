@@ -182,3 +182,6 @@ Light gray theme
 Light blue theme
 
 ![image](https://user-images.githubusercontent.com/55078043/176577792-d47ce959-bd07-4ff4-9cf9-b309ab061d0b.png)
+
+## TODO list
+* Set the QFont itself as a parameter of getThemeFiles instead of just font size
