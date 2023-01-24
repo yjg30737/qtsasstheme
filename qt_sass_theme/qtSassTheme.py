@@ -169,25 +169,19 @@ class QtSassTheme:
 
         os.chdir('../')
         if os.path.isdir(input_path):
-            f_lst = ['theme.css', 'main_widget.css', 'icon_button.css', 'icon_text_button.css', 'menu_bar.css']
+            f_lst = ['theme.css', 'icon_button.css', 'icon_text_button.css', 'menu_bar.css']
             f_lst = [os.path.join(input_path, f) for f in f_lst]
 
             with open(f_lst[0], 'r') as f:
                 theme_style = f.read()
             with open(f_lst[1], 'r') as f:
-                main_widget_style = f.read()
-            with open(f_lst[2], 'r') as f:
                 icon_button_style = f.read()
-            with open(f_lst[3], 'r') as f:
+            with open(f_lst[2], 'r') as f:
                 icon_text_button_style = f.read()
-            with open(f_lst[4], 'r') as f:
+            with open(f_lst[3], 'r') as f:
                 menu_bar_style = f.read()
 
-            if isinstance(main_window, QMainWindow) or isinstance(main_window, QDialog):
-                main_window.setStyleSheet(theme_style)
-            else:
-                main_window.setObjectName('mainWidget')
-                main_window.setStyleSheet(theme_style + main_widget_style)
+            main_window.setStyleSheet(theme_style)
 
             # button
             def setButtonStyle(main_window):
@@ -219,9 +213,5 @@ class QtSassTheme:
 
     def getMenuBarStyle(self):
         css = self.__getStyle('menu_bar.scss')
-        return css
-
-    def getMainWidgetStyle(self):
-        css = self.__getStyle('main_widget.scss')
         return css
 
