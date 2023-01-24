@@ -426,6 +426,36 @@ QSpinBox::down-button:pressed {
 QTimeEdit {
     background-color: $widgetcolor;
     color: $textcolor;
+    border: 1px solid $bordercolor;
+    padding: 2px;
+}
+
+QTimeEdit::up-button {
+    image: url($up);
+    min-width: 12px;
+    padding: 2px;
+}
+
+QTimeEdit::up-button:hover {
+    background-color: $hovercolor;
+}
+
+QTimeEdit::up-button:pressed {
+    background-color: $selectcolor;
+}
+
+QTimeEdit::down-button {
+    image: url($down);
+    min-width: 12px;
+    padding: 2px;
+}
+
+QTimeEdit::down-button:hover {
+    background-color: $hovercolor;
+}
+
+QTimeEdit::down-button:pressed {
+    background-color: $selectcolor;
 }
 
 QStatusBar {
@@ -438,6 +468,10 @@ QStatusBar::item {
 
 QStatusBar QLabel {
     margin-right: 2;
+}
+
+QStatusBar {
+    color: $textcolor
 }
 
 QSlider::groove:horizontal {
@@ -455,12 +489,23 @@ QSlider::handle:horizontal {
     border-radius: 3px;
 }
 
+QSlider::groove:vertical {
+    border: 1px solid $bordercolor;
+    width: 3px;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 $widgetcolor, stop:1 $altwidgetcolor);
+    margin: 0 2px;
+}
+
+QSlider::handle:vertical {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 $widgetcolor, stop:1 $altwidgetcolor);
+    border: 1px solid $bordercolor;
+    height: 6px;
+    margin: 0 -6px;
+    border-radius: 3px;
+}
+
 QToolTip {
     border: 1px solid $bordercolor;
     background-color: $widgetcolor;
     color: $textcolor;
-}
-
-QStatusBar {
-    color: $textcolor
 }
