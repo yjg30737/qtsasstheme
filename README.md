@@ -20,7 +20,7 @@ Old name of this is `qt-sass-theme-getter`.
 
 ## Detailed Description 
 ### Method Overview
-#### `getThemeFiles(theme: str = 'dark_gray', font_size=9, background_darker=False, output_path=os.getcwd())`
+#### `getThemeFiles(theme: str = 'dark_gray', font=QFont('Arial', 9), background_darker=False, output_path=os.getcwd())`
 Currently there are 4 official theme being supported:
 * dark_gray
 * dark_blue
@@ -182,6 +182,3 @@ Light gray theme
 Light blue theme
 
 ![image](https://user-images.githubusercontent.com/55078043/176577792-d47ce959-bd07-4ff4-9cf9-b309ab061d0b.png)
-
-## TODO list
-* Set the QFont itself as a parameter of getThemeFiles instead of just font size
