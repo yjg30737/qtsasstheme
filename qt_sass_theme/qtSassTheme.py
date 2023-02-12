@@ -69,14 +69,9 @@ class QtSassTheme:
         else:
             pass
 
-    def __setFontSize(self, font_size):
-        font = QApplication.font()
-        family_name = QApplication.font().family()
-        font.setFamily(family_name)
-        font.setPointSize(font_size)
+    def __setFontSize(self, font):
         font.setStyleStrategy(QFont.PreferAntialias)
         QApplication.setFont(font)
-
 
     def __getStyle(self, filename):
         cur_dir = os.path.dirname(__file__)
@@ -86,7 +81,7 @@ class QtSassTheme:
         css = qtsass.compile_filename(os.path.join(sass_dirname, filename), temp_file)
         return css
 
-    def getThemeFiles(self, theme: str = 'dark_gray', font_size=9, background_darker=False, output_path=os.getcwd()):
+    def getThemeFiles(self, theme: str = 'dark_gray', font=QFont('Arial', 9), background_darker=False, output_path=os.getcwd()):
         theme_lst = ['dark_gray', 'dark_blue', 'light_gray', 'light_blue']
         cur_dir = os.path.dirname(__file__)
         official_theme_flag = theme in theme_lst
@@ -146,7 +141,7 @@ class QtSassTheme:
         else:
             self.__setCustomThemeColor(var_filename, theme)
         self.__setBackgroundPolicy(var_filename, background_darker)
-        self.__setFontSize(font_size)
+        self.__setFontSize(font)
 
         # fade menu and tooltip
         QApplication.setEffectEnabled(Qt.UI_FadeMenu, True)
