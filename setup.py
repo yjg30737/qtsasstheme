@@ -9,13 +9,14 @@ with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
 
 setup(
     name='qtsasstheme',
-    version='0.0.68',
+    version='0.0.69',
     author='Jung Gyu Yoon',
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
     # package_data = {package_name: ['*.scss'] for package_name in find_packages()},
     package_data={'qt_sass_theme.sass': ['theme.scss',
+                                         'custom_widget.scss',
                                          'icon_button.scss',
                                          'icon_text_button.scss',
                                          'menu_bar.scss'],
@@ -24,9 +25,9 @@ setup(
                   'qt_sass_theme.var.dark.dark_blue': ['_variables.scss'],
                   'qt_sass_theme.var.light.light_gray': ['_variables.scss'],
                   'qt_sass_theme.var.light.light_blue': ['_variables.scss'],
-                  'qt_sass_theme.ico': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg', 'circle-solid.svg', 'undock.svg'],
-                  'qt_sass_theme.ico.dark': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg', 'circle-solid.svg', 'undock.svg'],
-                  'qt_sass_theme.ico.light': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg', 'circle-solid.svg', 'undock.svg']
+                  'qt_sass_theme.ico': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg', 'circle-solid.svg', 'undock.svg', 'drawer.svg', 'search.svg'],
+                  'qt_sass_theme.ico.dark': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg', 'circle-solid.svg', 'undock.svg', 'drawer.svg', 'search.svg'],
+                  'qt_sass_theme.ico.light': ['_icons.scss', 'check.svg', 'close.svg', 'down.svg', 'left.svg', 'right.svg', 'up.svg', 'circle-solid.svg', 'undock.svg', 'drawer.svg', 'search.svg']
                   },
     description='Set the Qt theme (e.g. darkgray/lightgray/darkblue/lightblue) easily',
     url='https://github.com/yjg30737/qtsasstheme.git',
