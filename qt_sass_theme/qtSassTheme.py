@@ -69,7 +69,7 @@ class QtSassTheme:
         else:
             pass
 
-    def __setFontSize(self, font):
+    def __setFont(self, font):
         font.setStyleStrategy(QFont.PreferAntialias)
         QApplication.setFont(font)
 
@@ -141,7 +141,7 @@ class QtSassTheme:
         else:
             self.__setCustomThemeColor(var_filename, theme)
         self.__setBackgroundPolicy(var_filename, background_darker)
-        self.__setFontSize(font)
+        self.__setFont(font)
 
         # fade menu and tooltip
         QApplication.setEffectEnabled(Qt.UI_FadeMenu, True)
