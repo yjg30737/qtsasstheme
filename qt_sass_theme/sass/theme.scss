@@ -1,6 +1,10 @@
 @import "../var/variables";
 @import "../ico/icons";
 
+* {
+    font: $fontattr
+}
+
 // todo every padding/margin should be set accompanied with font/scale size
 QMainWindow {
     background-color: $bgcolor;

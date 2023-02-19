@@ -51,6 +51,26 @@ class QtSassTheme:
                 f.seek(0, 0)
                 f.write(custom_theme_code + ''.join(fdata.splitlines(True)[1:]))
 
+    def __setFont(self, var_filename: str, font):
+        bold = 'bold' if font.bold() else ''
+        italic = 'italic' if font.italic() else ''
+        size = f"{font.pointSize()}pt"
+        family = f'"{font.family()}"'
+        fontattr = ' '.join([bold, italic, size, family]).strip()
+        with open(var_filename, 'r+') as f:
+            fdata = f.read()
+            regex = re.compile(r'\$fontattr:(.+)')
+            custom_theme_code = f'$fontattr: {fontattr};\n'
+            idx = 0
+            lines = fdata.split('\n')
+            for i, line in enumerate(lines):
+                if regex.search(line):
+                    idx = i
+                    break
+            lines[idx] = custom_theme_code
+            new_text = '\n'.join(lines)
+            f.write(new_text)
+
     def __setBackgroundPolicy(self, var_filename: str, background_darker=False):
         if background_darker:
              with open(var_filename, 'r+') as f:
@@ -68,10 +88,6 @@ class QtSassTheme:
                     f.write(background_darker_code)
         else:
             pass
-
-    def __setFont(self, font):
-        font.setStyleStrategy(QFont.PreferAntialias)
-        QApplication.setFont(font)
 
     def __getStyle(self, filename):
         cur_dir = os.path.dirname(__file__)
@@ -141,11 +157,7 @@ class QtSassTheme:
         else:
             self.__setCustomThemeColor(var_filename, theme)
         self.__setBackgroundPolicy(var_filename, background_darker)
-        self.__setFont(font)
-
-        # fade menu and tooltip
-        QApplication.setEffectEnabled(Qt.UI_FadeMenu, True)
-        QApplication.setEffectEnabled(Qt.UI_FadeTooltip, True)
+        self.__setFont(var_filename, font)
 
     def setThemeFiles(self, main_window: QWidget, input_path='res'):
         if os.path.basename(os.getcwd()) != input_path:
