@@ -1,16 +1,12 @@
-from qtpy.QtGui import QColor, QFont, qGray, QGuiApplication
-from qtpy.QtCore import Qt, QCoreApplication
-from qtpy.QtWidgets import QWidget, QMainWindow, QDialog, QAbstractButton, QApplication
+from qtpy.QtGui import QColor, QFont, qGray
+from qtpy.QtWidgets import QWidget, QAbstractButton
 
+from lxml import etree
 import os, tempfile, posixpath, re
 import shutil
 
 import qtsass
 
-# Set attribute Qt::AA_EnableHighDpiScaling before QCoreApplication is created
-QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-QCoreApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)  # HighDPI support
-QGuiApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
 
 class QtSassTheme:
 
@@ -20,6 +16,13 @@ class QtSassTheme:
         icon_path = cur_dir.replace(os.path.sep, posixpath.sep)
         ico_filename = os.path.join(icon_path, 'ico/_icons.scss').replace(os.path.sep, posixpath.sep)
         self.__setIcoPath(ico_filename, icon_path)
+        self.__initVal()
+
+    def __initVal(self):
+        self.__font = ''
+        # maybe use this later
+        self.__widgetToChange = ''
+        self.__color = ''
 
     def __setIcoPath(self, ico_filename: str, icon_path: str):
         import_abspath_str = f'$icopath: \'{icon_path}/\';'
@@ -71,6 +74,35 @@ class QtSassTheme:
             new_text = '\n'.join(lines)
             f.write(new_text)
 
+    def __setIcon(self, ico_dirname: str, new_width: str, new_height: str, new_color: str) -> None:
+        '''
+        :param ico_dirname: the directory containing SVG icons
+        :param width: the new width of the SVG icons
+        :param height: the new height of the SVG icons
+        :param new_color: the new fill color of the SVG icons
+        :return: None
+        '''
+
+        # loop through all the SVG files in the directory
+        for filename in os.listdir(ico_dirname):
+            if filename.endswith('.svg'):
+                # load the SVG file as an etree object
+                svg = etree.parse(os.path.join(ico_dirname, filename))
+
+                # modify the root element to change the width, height, and fill attributes
+                root = svg.getroot()
+                root.set('width', new_width)
+                root.set('height', new_height)
+                for elem in root.iter():
+                    if len(elem):
+                        if 'fill' in elem.attrib:
+                            elem.set('fill', new_color)
+                        else:
+                            elem.attrib['fill'] = new_color
+
+                # save the modified SVG object back to the original file
+                svg.write(os.path.join(ico_dirname, filename), pretty_print=True)
+
     def __setBackgroundPolicy(self, var_filename: str, background_darker=False):
         if background_darker:
              with open(var_filename, 'r+') as f:
@@ -97,13 +129,17 @@ class QtSassTheme:
         css = qtsass.compile_filename(os.path.join(sass_dirname, filename), temp_file)
         return css
 
-    def getThemeFiles(self, theme: str = 'dark_gray', font=QFont('Arial', 9), background_darker=False, output_path=os.getcwd()):
-        theme_lst = ['dark_gray', 'dark_blue', 'light_gray', 'light_blue']
+    def getThemeFiles(self, theme: str = 'dark_gray', font=QFont('Arial', 9), icon_size=9, background_darker=False, output_path=os.getcwd()):
+        official_theme_dict = {'dark_gray': '#555555', 'dark_blue': '#2c3949', 'light_gray': '#D4D4D4', 'light_blue': '#c7dffb'}
         cur_dir = os.path.dirname(__file__)
-        official_theme_flag = theme in theme_lst
+        official_theme_flag = theme in official_theme_dict.keys()
+        theme_color = ''
+        ico_dirname = ''
+        var_dirname = ''
         if official_theme_flag:
+            theme_color = official_theme_dict[theme]
             theme_prefix = theme.split('_')[0]
-            ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_prefix))
+            ico_dirname = os.path.join(cur_dir, 'ico')
             var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_prefix), theme))
 
         # check whether theme value is 6-digit hex color
@@ -116,13 +152,14 @@ class QtSassTheme:
                 # 'if it is, check 6-digit hex color is lighter than usual or darker')
                 r, g, b = theme_color.red(), theme_color.green(), theme_color.blue()
                 theme_lightness = ''
+                # use this to var
                 if qGray(r, g, b) > 255 // 2:
                     theme_lightness = 'light'
                 else:
                     theme_lightness = 'dark'
 
                 # get the ico_dirname
-                ico_dirname = os.path.join(cur_dir, os.path.join('ico', theme_lightness))
+                ico_dirname = os.path.join(cur_dir, os.path.join('ico'))
 
                 # get the dark_gray/light_gray theme
                 var_dirname = os.path.join(cur_dir, os.path.join(os.path.join('var', theme_lightness),
@@ -148,6 +185,25 @@ class QtSassTheme:
         shutil.copytree(sass_dirname, 'sass')
         shutil.copytree(var_dirname, 'var')
 
+        # assume we have an existing QColor variable named 'old_color'
+        old_color = QColor(theme_color)  # example color, you can replace with your own QColor variable
+
+        # get the hue, saturation, and lightness values of the old color
+        h, s, l = old_color.hue(), old_color.saturation(), old_color.lightness()
+
+        # desaturate the color by setting the saturation value to 0
+        s = 0
+
+        # invert the lightness value by subtracting it from 255
+        l = 255 - l
+
+        # create a new color with the modified values
+        new_color = QColor.fromHsl(h, s, l)
+
+        # set svg icon attribute
+        self.__setIcon('ico', str(font.pointSize()), str(font.pointSize()), new_color.name())
+
+        # set icon scss
         ico_filename = 'ico/_icons.scss'
         self.__setIcoPath(ico_filename, output_dirname)
 
@@ -157,7 +213,11 @@ class QtSassTheme:
         else:
             self.__setCustomThemeColor(var_filename, theme)
         self.__setBackgroundPolicy(var_filename, background_darker)
+
         self.__setFont(var_filename, font)
+
+        # TODO set the font
+        # TODO set the size of the icon
 
     def setThemeFiles(self, main_window: QWidget, input_path='res'):
         if os.path.basename(os.getcwd()) != input_path:
@@ -208,6 +268,10 @@ class QtSassTheme:
 
     def getThemeStyle(self):
         css = self.__getStyle('theme.scss')
+        return css
+
+    def getCustomWidgetStyle(self):
+        css = self.__getStyle('custom_widget.scss')
         return css
 
     def getIconButtonStyle(self):
